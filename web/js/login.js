@@ -1,9 +1,9 @@
 function login_check() {
-    var username_elem = document.getElementById("username");
+    var account_elem = document.getElementById("account");
     var password_elem = document.getElementById("password");
-    if(username_elem.value === "") {
+    if(account_elem.value === "") {
         alert("请输入账号！");
-        username_elem.focus();
+        account_elem.focus();
         return false;
     } else if(password_elem.value === "") {
         alert("请输入密码！")

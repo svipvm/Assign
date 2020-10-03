@@ -15,13 +15,13 @@
   <body>
     <div class="certer-box">
       <div class="select-box left-box">
-        <a href="assignLogin.jsp">
+        <a href="adminLogin.jsp">
           <img class="img-style" src="img/index_select.jpg" alt="assign login">
         </a>
         <div class="text-content">Assign</div>
       </div>
       <div class="select-box right-box">
-        <a href="submitLogin.jsp">
+        <a href="userLogin.jsp">
           <img class="img-style" src="img/index_select.jpg" alt="submit login">
         </a>
         <div class="text-content">Submit</div>

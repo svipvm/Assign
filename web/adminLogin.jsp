@@ -30,16 +30,17 @@
     <div class="content right-style">
       <h1>用户登录</h1>
       <hr size="2" color="black">
-      <form action="#" method="post" onsubmit="return login_check()">
+      <form action="AdminLoginServlet" method="post" onsubmit="return login_check()">
         <ul>
           <li><p>Account</p></li>
-          <li><input class="text-input" id="username" type="text" name="username"></li>
+          <li><input class="text-input" id="account" type="text" name="account"></li>
           <li><p>Password</p></li>
           <li><input class="text-input" id="password" type="password" name="password"></li>
           <li><p><input class="login-bt" type="submit" value="登录"></p></li>
         </ul>
       </form>
-      <p class="message">Hello World!</p>
+<%--      <p class="message">Hello World!</p>--%>
+      <p class="message">${error}</p>
     </div>
   </div>
 </body>
