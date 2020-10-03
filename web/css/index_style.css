@@ -1,0 +1,44 @@
+body {
+    /*margin: 0 auto;*/
+    /*background-color: yellow;*/
+    background: url(../img/index_bg.jpg) round;
+}
+
+.certer-box {
+    /*border: 2px solid black;*/
+    height: 370px;
+    width: 600px;
+    margin: 13% auto;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 90%;
+    background-color: white;
+}
+
+.select-box {
+    /*border: 2px solid black;*/
+    height: 180px;
+    width: 150px;
+    margin-top: 100px;
+}
+
+.img-style {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-box {
+    float: left;
+    margin-left: 80px;
+}
+
+.right-box {
+    float: right;
+    margin-right: 80px;
+}
+
+.text-content {
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+}

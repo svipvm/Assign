@@ -1,0 +1,91 @@
+body {
+    /*margin: 0 auto;*/
+    /*background-color: yellow;*/
+    background: url(../img/index_bg.jpg) round;
+}
+
+.content-box {
+    /*border: 2px solid black;*/
+    height: 556px;
+    width: 900px;
+    margin: 10% auto;
+    border-radius: 20px;
+    overflow: hidden;
+    opacity: 90%;
+    background-color: white;
+}
+
+.login-box {
+    border: 2px solid black;
+    text-align: left;
+    width: 50px;
+    /*height: 30px;*/
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+.content {
+    border: 2px solid black;
+    /*margin: auto auto;*/
+    /*width: 40%;*/
+    text-align: center;
+    height: 496px;
+    margin-top: 30px;
+}
+
+.left-style {
+    float: left;
+    width: 55%;
+    margin-left: 30px;
+}
+
+.right-style {
+    float: right;
+    /*height: 300px;*/
+    width: 35%;
+    margin-right: 30px;
+}
+
+.left-style ul {
+    text-align: left;
+    width: 85%;
+}
+
+.right-style ul {
+    margin-top: 65px;
+    text-align: left;
+    width: 75%;
+}
+
+.right-style ul li {
+    list-style: none;
+}
+
+.text-input {
+    width: 98%;
+    height: 30px;
+    font-family: "Microsoft YaHei", serif;
+    font-size: 18px;
+}
+
+.login-bt {
+    width: 120px;
+    height: 35px;
+    margin-left: 22%;
+    margin-top: 20px;
+    border-width: 0;
+    border-radius: 3px;
+    background: #1E90FF;
+    cursor: pointer;
+    /*outline: none; !* 不显示轮廓线 *!*/
+    font-family: Microsoft YaHei, serif;
+    color: white;
+    font-size: 16px;
+}
+
+.message {
+    margin-left: 30px;
+    margin-top: 30px;
+    text-align: left;
+    color: red;
+}
