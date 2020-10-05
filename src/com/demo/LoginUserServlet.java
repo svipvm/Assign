@@ -26,10 +26,16 @@ public class LoginUserServlet extends HttpServlet {
         user.setAccount(account);
         user.setPassword(password);
 
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
+        UserService userService = ServiceFactory.getUserServiceImpl();
 
-        response.sendRedirect("/submit/CheckAdminServlet");
+        if(userService.loginUser(user).equals("success")) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            response.sendRedirect("submit/index.jsp");
+        } else {
+            request.setAttribute("error", "账号、密码错误！");
+            request.getRequestDispatcher("/userLogin.jsp").forward(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -1,11 +1,9 @@
 package com.demo.service.impl;
 
-import com.demo.dao.AdminDAO;
 import com.demo.dao.UserDAO;
 import com.demo.factory.DAOFactory;
 import com.demo.service.UserService;
 import com.demo.util.DBConnection;
-import com.demo.vo.Admin;
 import com.demo.vo.User;
 
 import java.sql.Connection;
@@ -18,6 +16,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public String loginUser(User user) {
         String messge = "error";
+        if(user == null) return messge;
         Connection conn = dbc.getConnection();
         UserDAO userDAO = DAOFactory.getUserDAOImpl(conn);
         try {

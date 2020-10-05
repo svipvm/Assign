@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.demo.vo.User" %><%--
   Created by IntelliJ IDEA.
   User: vmice
   Date: 2020/10/3
@@ -12,7 +12,7 @@
   <title>Title</title>
 </head>
 <body>
-  <jsp:include page="submit/CheckAdminServlet"/>
-  Hello World!!!
+  <% User user = (User) session.getAttribute("user"); %>
+  <%= user.getAccount() %> Submit, Hello World.
 </body>
 </html>

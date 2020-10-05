@@ -17,6 +17,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public String loginAdmin(Admin admin) {
         String messge = "error";
+        if(admin == null) return messge;
         Connection conn = dbc.getConnection();
         AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
         try {
