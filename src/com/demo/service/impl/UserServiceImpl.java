@@ -29,4 +29,16 @@ public class UserServiceImpl implements UserService {
         }
         return messge;
     }
+
+    @Override
+    public User findByAccount(String account) {
+        User user = null;
+        Connection conn = dbc.getConnection();
+        try {
+            user = DAOFactory.getUserDAOImpl(conn).findByAccount(account);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return user;
+    }
 }

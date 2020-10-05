@@ -1,5 +1,6 @@
 package com.demo;
 
+import com.demo.factory.DAOFactory;
 import com.demo.factory.ServiceFactory;
 import com.demo.service.AdminService;
 import com.demo.service.UserService;
@@ -30,6 +31,7 @@ public class LoginUserServlet extends HttpServlet {
 
         if(userService.loginUser(user).equals("success")) {
             HttpSession session = request.getSession();
+            user = userService.findByAccount(account);
             session.setAttribute("user", user);
             response.sendRedirect("submit/index.jsp");
         } else {

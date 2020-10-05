@@ -1,4 +1,7 @@
-<%@ page import="com.demo.vo.User" %><%--
+<%@ page import="com.demo.vo.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="javax.print.StreamPrintService" %><%--
   Created by IntelliJ IDEA.
   User: vmice
   Date: 2020/10/3
@@ -13,19 +16,21 @@
   <title>Submit</title>
 </head>
 <body>
+<jsp:include page="/submit/LoadingUserServlet"/>
 <div class="inform">
-  <img id="head-img" src="../img/head/bot-1.png" alt="head-img">
+  <%ArrayList<String> inform = (ArrayList<String>) session.getAttribute("user-inform");%>
+  <img id="head-img" src="<%=inform.get(3)%>" alt="head-img">
   <table id="inform-table">
-    <tr><td>ID:</td><td>Hello</td></tr>
-    <tr><td>姓名:</td><td>Hello</td></tr>
-    <tr><td>性别:</td><td>Hello</td></tr>
+    <tr><td>ID:</td><td><%=inform.get(0)%></td></tr>
+    <tr><td>姓名:</td><td><%=inform.get(1)%></td></tr>
+    <tr><td>性别:</td><td><%=inform.get(2)%></td></tr>
   </table>
   <div class="inform-state">
-    <span>Hello World</span>
+    <span><%=inform.get(4)%></span>
     <button class="inform-button" type="button">刷新</button>
   </div>
   <div class="inform-state">
-    <span>Hello World</span>
+    <span><%=inform.get(5)%></span>
     <button class="inform-button" type="button">注销</button>
   </div>
 </div>
@@ -88,38 +93,12 @@
   <div class="content-title">Hello World</div>
   <hr color="dodgerblue">
   <div class="content-inform-user">Hello World</div>
-    <table class="content-table-user">
-      <tr>
-        <td><a class="file-submit" href="#"><input type="file">选择文件</a></td>
-        <td><button type="submit">收取</button></td>
-      </tr>
-    </table>
-<%--  <table class="content-table">--%>
-<%--    <tr>--%>
-<%--      <td>文件格式：</td>--%>
-<%--      <td>--%>
-<%--        <label>--%>
-<%--          <select>--%>
-<%--            <option value="I-N">ID 姓名</option>--%>
-<%--            <option value="N-I">姓名 ID</option>--%>
-<%--          </select>--%>
-<%--        </label>--%>
-<%--      </td>--%>
-<%--      <td class="content-bottom"  rowspan="4"><button type="submit">收取</button></td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--      <td>应交人数：</td>--%>
-<%--      <td>2020</td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--      <td>实交人数：</td>--%>
-<%--      <td>2018</td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--      <td>文件大小：</td>--%>
-<%--      <td>1024 MB</td>--%>
-<%--    </tr>--%>
-<%--  </table>--%>
+  <form action="#" enctype="multipart/form-data" method="post">
+    <input type="file" name="uploadFile" />
+    <br/><br/>
+    <button type="submit">上传</button>
+  </form>
+
 </div>
 <div class="member">
   <p align="center">小组成员</p>
@@ -131,13 +110,6 @@
         <td class="member-img"><img src="../img/head/bot-2.png"></td>
         <td class="member-ID">123456790123</td>
         <td class="member-name">Hello</td>
-<%--        <td class="member-state">--%>
-<%--          <%if(i % 2 == 0) {%>--%>
-<%--          <div class="member-state-point" style="background-color:#67C23A"></div>--%>
-<%--          <%} else {%>--%>
-<%--          <div class="member-state-point" style="background-color:#ff0000"></div>--%>
-<%--          <%}%>--%>
-<%--        </td>--%>
       </tr>
       <%}%>
     </table>
