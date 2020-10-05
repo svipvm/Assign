@@ -138,10 +138,10 @@ body {
     height: 23%;
 }
 .group-td-left {
-    width: 75%;
+    width: 70%;
 }
 .group-td-right {
-    width: 25%;
+    width: 30%;
 }
 .group-td-right button {
     height: 100%;
@@ -197,7 +197,7 @@ body {
     border-right: 1px solid dodgerblue;
     float: left;
     height: 78%;
-    width: 55%;
+    width: 50%;
     margin-left: 2%;
 }
 .content-table {
@@ -206,7 +206,7 @@ body {
     /*text-align: center;*/
     margin-right: 2%;
     height: 78%;
-    width: 40%;
+    width: 45%;
 }
 .content-table td {
     border-bottom: 1px solid dodgerblue;
@@ -226,6 +226,52 @@ body {
     color: #fff;
     border: solid 1px #0254bf;
     border-radius: 5px;
+}
+.content-inform-user {
+    border-right: 1px solid dodgerblue;
+    float: left;
+    height: 78%;
+    width: 20%;
+    margin-left: 2%;
+}
+.content-table-user {
+    /*border: 1px solid dodgerblue;*/
+    float: right;
+    /*text-align: center;*/
+    margin-right: 2%;
+    height: 78%;
+    width: 70%;
+}
+.content-table-user button {
+    height: 60%;
+    width: 5px;
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+}
+.file-submit {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+}
+.file-submit input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file-submit:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
 }
 
 .member-list {
