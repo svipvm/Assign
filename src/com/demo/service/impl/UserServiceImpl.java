@@ -4,9 +4,11 @@ import com.demo.dao.UserDAO;
 import com.demo.factory.DAOFactory;
 import com.demo.service.UserService;
 import com.demo.util.DBConnection;
+import com.demo.vo.Muster;
 import com.demo.vo.User;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,7 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByAccount(String account) {
+    public User findUserByAccount(String account) {
         User user = null;
         Connection conn = dbc.getConnection();
         try {
@@ -40,5 +42,17 @@ public class UserServiceImpl implements UserService {
             Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return user;
+    }
+
+    @Override
+    public ArrayList<Muster> findGroupListByAccount(String account) {
+        ArrayList<Muster> groupList = null;
+        Connection conn = dbc.getConnection();
+        try {
+            groupList = DAOFactory.getUserDAOImpl(conn).findGroupListByAccount(account);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return groupList;
     }
 }

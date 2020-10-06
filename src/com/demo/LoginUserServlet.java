@@ -31,7 +31,7 @@ public class LoginUserServlet extends HttpServlet {
 
         if(userService.loginUser(user).equals("success")) {
             HttpSession session = request.getSession();
-            user = userService.findByAccount(account);
+            user = userService.findUserByAccount(account);
             session.setAttribute("user", user);
             response.sendRedirect("submit/index.jsp");
         } else {

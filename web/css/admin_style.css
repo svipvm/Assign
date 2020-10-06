@@ -3,6 +3,12 @@ body {
     background: url(../img/index_bg.jpg) round;
 }
 
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .inform {
     border: 2px solid black;
     background-color: white;
@@ -39,7 +45,7 @@ body {
     width: 30%;
     opacity: 90%;
     overflow: hidden;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
 
 .content {
@@ -68,124 +74,6 @@ body {
     overflow: hidden;
 }
 
-#head-img {
-    border: 1px solid #7b6666;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 40%;
-    height: 55%;
-    margin-top: 4%;
-    margin-left: 4%;
-}
-
-#inform-table {
-    text-align: center;
-    position: absolute;
-    top: 1%;
-    left: 45%;
-    margin-top: 4%;
-    height: 55%;
-    width: 50%;
-}
-
-#inform-table tr {
-    height: 20%;
-}
-
-.inform-state {
-    width: 90%;
-    margin-top: 6%;
-    margin-left: 5%;
-}
-
-.inform-state span {
-    /*border: 1px solid black;*/
-    text-align: center;
-    display: inline-block;
-    width: 70%;
-}
-
-.inform-state button {
-    float: right;
-    height: 10%;
-    margin-right: 5%;
-    background-color: #158ae7;
-    color: #fff;
-    border: solid 1px #0254bf;
-    border-radius: 5px;
-}
-
-.group button {
-    width: 100%;
-    height: 8%;
-    background-color: #158ae7;
-    color: #fff;
-    border: solid 1px #0254bf;
-}
-.group-list {
-    height: 90%;
-    overflow-y: scroll;
-}
-.group-list button {
-    margin-right: 10%;
-    width: 12%;
-    height: 8%;
-}
-.group-table {
-    border: 1px solid dodgerblue;
-    margin: 2px auto;
-    width: 98%;
-    height: 23%;
-}
-.group-td-left {
-    width: 70%;
-}
-.group-td-right {
-    width: 30%;
-}
-.group-td-right button {
-    height: 100%;
-    width: 100%;
-}
-
-.task-table {
-    border: 1px solid dodgerblue;
-    margin: 2px auto;
-    width: 98%;
-    height: 23%;
-}
-.task-table td {
-    /*border: 1px solid dodgerblue;*/
-}
-.task-elem-img {
-    width: 3%;
-    border-right: 1px solid dodgerblue;
-}
-.task-elem-inform {
-    text-align: center;
-}
-.task-state-point {
-    display: inline-block;
-    width: 90%;
-    height: 16%;
-    border-radius: 50%;
-}
-.task-elem-top {
-    border-bottom: 1px solid dodgerblue;
-}
-.task-elem-button {
-    text-align: center;
-    width: 5%;
-    border-left: 1px solid dodgerblue;
-}
-.task-elem-button button {
-    height: 90%;
-    width: 90%;
-    background-color: #158ae7;
-    color: #fff;
-    border: solid 1px #0254bf;
-    border-radius: 5px;
-}
 
 .content-title {
     font-size: 20px;

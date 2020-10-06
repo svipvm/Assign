@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.user;
 
 import com.demo.vo.Admin;
 import com.demo.vo.User;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "LoadingUserServlet", urlPatterns = {"/submit/LoadingUserServlet"})
-public class LoadingUserServlet extends HttpServlet {
+@WebServlet(name = "UserInformServlet", urlPatterns = {"/submit/UserInformServlet"})
+public class UserInformServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

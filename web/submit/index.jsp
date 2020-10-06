@@ -16,78 +16,14 @@
   <title>Submit</title>
 </head>
 <body>
-<jsp:include page="/submit/LoadingUserServlet"/>
 <div class="inform">
-  <%ArrayList<String> inform = (ArrayList<String>) session.getAttribute("user-inform");%>
-  <img id="head-img" src="<%=inform.get(3)%>" alt="head-img">
-  <table id="inform-table">
-    <tr><td>ID:</td><td><%=inform.get(0)%></td></tr>
-    <tr><td>姓名:</td><td><%=inform.get(1)%></td></tr>
-    <tr><td>性别:</td><td><%=inform.get(2)%></td></tr>
-  </table>
-  <div class="inform-state">
-    <span><%=inform.get(4)%></span>
-    <button class="inform-button" type="button">刷新</button>
-  </div>
-  <div class="inform-state">
-    <span><%=inform.get(5)%></span>
-    <button class="inform-button" type="button">注销</button>
-  </div>
+  <iframe name="frame-infrom" src="userInform.jsp"></iframe>
 </div>
 <div class="group">
-  <button type="button">加入小组</button>
-  <div class="group-list">
-    <% for(int i = 0; i < 10; i++) {%>
-    <table class="group-table">
-      <tr>
-        <td class="group-td-left">Hello World</td>
-<%--        <td class="group-td-right"><button type="button">重命名</button></td>--%>
-      </tr>
-      <tr>
-        <td class="group-td-left">Hello World</td>
-<%--        <td class="group-td-right"><button type="button">删除</button></td>--%>
-      </tr>
-    </table>
-    <%}%>
-  </div>
+  <iframe name="frame-group" src="userGroup.jsp"></iframe>
 </div>
 <div class="task">
-  <table class="task-table">
-    <tr>
-      <td class="task-elem-img" rowspan="3">
-        <div class="task-state-point" style="background-color:#67C23A"></div>
-      </td>
-      <td class="task-elem-top" colspan="2">Hello World</td>
-<%--      <td class="task-elem-button" rowspan="3"><button type="button">删除</button></td>--%>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>Hello World</td>
-      <td>Hello World</td>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>Hello World</td>
-      <td>Hello World</td>
-    </tr>
-  </table>
-  <%for(int i = 0; i < 10; i++) {%>
-  <table class="task-table">
-    <tr>
-      <td class="task-elem-img" rowspan="3">
-        <div class="task-state-point" style="background-color:#E6A23C"></div>
-      </td>
-      <td class="task-elem-top" colspan="2">Hello World</td>
-<%--      <td class="task-elem-button" rowspan="3"><button type="button">删除</button></td>--%>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>Hello World</td>
-      <td>Hello World</td>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>Hello World</td>
-      <td>Hello World</td>
-    </tr>
-  </table>
-  <%}%>
+  <iframe name="frame-task" src="userTask.jsp"></iframe>
 </div>
 <div class="content">
   <div class="content-title">Hello World</div>
