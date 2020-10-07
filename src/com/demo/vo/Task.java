@@ -2,9 +2,37 @@ package com.demo.vo;
 
 public class Task {
     private String ID;
+    private String account;
+    private String musterID;
+    private String topic;
+    private String content;
+
+    public String getMusterID() {
+        return musterID;
+    }
+
+    public void setMusterID(String musterID) {
+        this.musterID = musterID;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     private String start_time;
     private String end_time;
-    private String account;
 
     public String getID() {
         return ID;
