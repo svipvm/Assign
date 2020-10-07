@@ -23,7 +23,7 @@
   <iframe name="frame-group" src="userGroup.jsp"></iframe>
 </div>
 <div class="task">
-  <iframe name="frame-task" src="userTask.jsp"></iframe>
+  <iframe name="frame-task" src=""></iframe>
 </div>
 <div class="content">
   <div class="content-title">Hello World</div>
@@ -34,22 +34,9 @@
     <br/><br/>
     <button type="submit">上传</button>
   </form>
-
 </div>
 <div class="member">
-  <p align="center">小组成员</p>
-  <hr color="#158ae7">
-  <div class="member-list">
-    <table class="member-table">
-      <%for(int i = 0; i < 40; i++) {%>
-      <tr>
-        <td class="member-img"><img src="../img/head/bot-2.png"></td>
-        <td class="member-ID">123456790123</td>
-        <td class="member-name">Hello</td>
-      </tr>
-      <%}%>
-    </table>
-  </div>
+  <iframe name="frame-member" src=""></iframe>
 </div>
 </body>
 </html>

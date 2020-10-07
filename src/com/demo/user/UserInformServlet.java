@@ -1,5 +1,7 @@
 package com.demo.user;
 
+import com.demo.factory.ServiceFactory;
+import com.demo.service.UserService;
 import com.demo.vo.Admin;
 import com.demo.vo.User;
 
@@ -21,18 +23,12 @@ public class UserInformServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        ArrayList<String> inform = new ArrayList<>();
+
+        UserService userService = ServiceFactory.getUserServiceImpl();
+
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
-        getUserInform(session, user);
-//        getUserGroup(session, user);
-//        getUserTask(session, user);
-//        getUserConeent(session, user);
-//        getUserMember(session, user);
-    }
-
-    private void getUserInform(HttpSession session, User user) {
-        ArrayList<String> inform = new ArrayList<>();
 
         char[] chars = user.getAccount().toCharArray();
         int sum = 0, p = 233;
@@ -40,8 +36,10 @@ public class UserInformServlet extends HttpServlet {
             sum = (sum * 3 + (int) aChar) % p;
         }
         String src = String.format("../img/head/bot-%s.png", sum % 18 + 1);
-        String group_num = String.format("拥有小组数：%s", 0);
-        String submit_num = String.format("还未提交数：%s", 0);
+        int group_count = userService.countGroupByAccount(user.getAccount());
+        int task_count = userService.countTaskByAccount(user.getAccount());
+        String group_num = String.format("拥有小组数：%s", group_count);
+        String submit_num = String.format("还未提交数：%s", task_count);
 
         inform.add(user.getAccount());
         inform.add(user.getName());
@@ -52,6 +50,5 @@ public class UserInformServlet extends HttpServlet {
 
         session.setAttribute("user-inform", inform);
     }
-
 
 }

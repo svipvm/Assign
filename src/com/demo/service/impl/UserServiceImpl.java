@@ -5,6 +5,7 @@ import com.demo.factory.DAOFactory;
 import com.demo.service.UserService;
 import com.demo.util.DBConnection;
 import com.demo.vo.Muster;
+import com.demo.vo.Task;
 import com.demo.vo.User;
 
 import java.sql.Connection;
@@ -54,5 +55,41 @@ public class UserServiceImpl implements UserService {
             Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return groupList;
+    }
+
+    @Override
+    public int countGroupByAccount(String account) {
+        int result = 0;
+        Connection conn = dbc.getConnection();
+        try {
+            result = DAOFactory.getUserDAOImpl(conn).countGroupByAccount(account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public int countTaskByAccount(String account) {
+        int result = 0;
+        Connection conn = dbc.getConnection();
+        try {
+            result = DAOFactory.getUserDAOImpl(conn).countTaskByAccount(account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public ArrayList<Task> findTaskByMuster(String ID) {
+        ArrayList<Task> tasks = null;
+        Connection conn = dbc.getConnection();
+        try {
+            tasks = DAOFactory.getUserDAOImpl(conn).findTaskByMuster(ID);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return tasks;
     }
 }

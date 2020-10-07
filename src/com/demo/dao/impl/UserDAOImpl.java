@@ -3,6 +3,7 @@ package com.demo.dao.impl;
 import com.demo.dao.UserDAO;
 import com.demo.vo.Admin;
 import com.demo.vo.Muster;
+import com.demo.vo.Task;
 import com.demo.vo.User;
 
 import java.sql.Connection;
@@ -54,5 +55,55 @@ public class UserDAOImpl implements UserDAO {
             groupList.add(group);
         }
         return groupList;
+    }
+
+    @Override
+    public int countGroupByAccount(String account) throws Exception {
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        int result = 0;
+        String sql = "select count(*) from belong where account=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) result = rsts.getInt(1);
+        return result;
+    }
+
+    @Override
+    public int countTaskByAccount(String account) throws Exception {
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        int result = 0;
+        String sql = "select count(*) from task, belong where belong.account=?" +
+                "and belong.ID=task.musterID and task.end_time is null";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) result = rsts.getInt(1);
+        return result;
+    }
+
+    @Override
+    public ArrayList<Task> findTaskByMuster(String ID) throws Exception {
+        ArrayList<Task> tasks = new ArrayList<>();
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select * from task where musterID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        while(rsts.next()) {
+            Task task = new Task();
+            task.setID(rsts.getString(1));
+            task.setAccount(rsts.getString(2));
+            task.setMusterID(rsts.getString(3));
+            task.setTopic(rsts.getString(4));
+            task.setContent(rsts.getString(5));
+            task.setStart_time(rsts.getString(6));
+            task.setEnd_time(rsts.getString(7));
+            tasks.add(task);
+        }
+        return tasks;
     }
 }

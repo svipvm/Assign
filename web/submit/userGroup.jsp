@@ -11,6 +11,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript">
+    function reMenber(value) {
+      var memberFrame = parent.document.getElementsByName('frame-member')[0];
+      memberFrame.src = "userMember.jsp?groupID=" + value;
+    }
+  </script>
   <title>Title</title>
 </head>
 <body>
@@ -18,8 +24,7 @@
   <%ArrayList<Muster> groupList = (ArrayList<Muster>) session.getAttribute("user-group");%>
   <button id="group-button" type="button">加入小组</button>
   <div class="group-list">
-    <%if(groupList != null) {%>
-    <%  for(Muster group : groupList) {%>
+    <%for(Muster group : groupList) {%>
     <table class="group-table">
       <tr>
         <td class="group-td-left"><%=group.getName()%></td>
@@ -30,11 +35,12 @@
       <tr>
         <td class="group-td-left"></td>
         <td class="group-td-right">
-          <a href="userTask.jsp?taskID" target="frame-task"><button type="button">选择</button></a>
+          <a href="userTask.jsp?groupID=<%=group.getID()%>" target="frame-task">
+            <button type="button" onclick="reMenber('<%=group.getID()%>')">选择</button>
+          </a>
         </td>
       </tr>
     </table>
-    <%  }%>
     <%}%>
   </div>
 </body>

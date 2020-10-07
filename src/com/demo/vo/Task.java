@@ -6,6 +6,8 @@ public class Task {
     private String musterID;
     private String topic;
     private String content;
+    private String start_time;
+    private String end_time;
 
     public String getMusterID() {
         return musterID;
@@ -30,9 +32,6 @@ public class Task {
     public void setContent(String content) {
         this.content = content;
     }
-
-    private String start_time;
-    private String end_time;
 
     public String getID() {
         return ID;

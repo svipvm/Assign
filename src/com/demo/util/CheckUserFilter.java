@@ -26,7 +26,7 @@ public class CheckUserFilter implements Filter {
         User user = (User) session.getAttribute("user");
 
         UserService userService = ServiceFactory.getUserServiceImpl();
-        System.out.println(user.getAccount() + "\n" + user.getPassword());
+//        System.out.println(user.getAccount() + "\n" + user.getPassword());
         if(userService.loginUser(user).equals("success")) {
 //            System.out.println("Debug: " + admin.getAccount() + " - " + admin.getPassword());
             chain.doFilter(req, resp);

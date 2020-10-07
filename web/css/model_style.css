@@ -121,3 +121,37 @@
     border: solid 1px #0254bf;
     border-radius: 5px;
 }
+
+/*member demo*/
+.member-list {
+    border: 1px solid dodgerblue;
+    height: 90%;
+    width: 100%;
+    /*overflow-y: scroll;*/
+}
+.member-table {
+    margin-left: 2%;
+    /*line-height: 200%;*/
+    width: 95%;
+    height: 100%;
+}
+.member-table td{
+    border-bottom: 1px solid dodgerblue;
+    height: 35px;
+}
+.member-img {
+    width: 15%;
+}
+.member-img img {
+    width: 100%;
+    height: 100%;
+}
+.member-state {
+    width: 4%;
+}
+.member-state-point {
+    display: inline-block;
+    width: 90%;
+    height: 16%;
+    border-radius: 50%;
+}
