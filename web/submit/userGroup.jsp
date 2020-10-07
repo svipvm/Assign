@@ -18,7 +18,8 @@
   <%ArrayList<Muster> groupList = (ArrayList<Muster>) session.getAttribute("user-group");%>
   <button id="group-button" type="button">加入小组</button>
   <div class="group-list">
-    <% for(Muster group : groupList) {%>
+    <%if(groupList != null) {%>
+    <%  for(Muster group : groupList) {%>
     <table class="group-table">
       <tr>
         <td class="group-td-left"><%=group.getName()%></td>
@@ -33,6 +34,7 @@
         </td>
       </tr>
     </table>
+    <%  }%>
     <%}%>
   </div>
 </body>
