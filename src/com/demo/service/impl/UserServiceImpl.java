@@ -92,4 +92,16 @@ public class UserServiceImpl implements UserService {
         }
         return tasks;
     }
+
+    @Override
+    public ArrayList<User> findUsersByMusterID(String ID) {
+        ArrayList<User> users = null;
+        Connection conn = dbc.getConnection();
+        try {
+            users = DAOFactory.getUserDAOImpl(conn).findUsersByMusterID(ID);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 }

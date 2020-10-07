@@ -8,32 +8,32 @@
     border: 1px solid #7b6666;
     border-radius: 10px;
     overflow: hidden;
-    width: 40%;
-    height: 55%;
-    margin-top: 4%;
+    width: 30%;
+    height: 40%;
+    margin-top: 6%;
     margin-left: 4%;
 }
 #inform-table {
     text-align: center;
     position: absolute;
     top: 1%;
-    left: 45%;
-    margin-top: 4%;
+    left: 40%;
+    margin-top: 1%;
     height: 55%;
-    width: 50%;
+    width: 60%;
 }
 #inform-table tr {
     height: 20%;
 }
 .inform-state {
     width: 90%;
-    margin-top: 6%;
+    margin-top: 10%;
     margin-left: 5%;
 }
 .inform-state span {
     text-align: center;
     display: inline-block;
-    width: 70%;
+    width: 65%;
 }
 .inform-state button {
     float: right;
@@ -53,15 +53,15 @@
     color: #fff;
     border: solid 1px #0254bf;
 }
-.group-list {
-    height: 90%;
-    overflow-y: scroll;
-}
-.group-list button {
-    margin-right: 10%;
-    width: 12%;
-    height: 8%;
-}
+/*.group-list {*/
+/*    height: 90%;*/
+/*    overflow-y: scroll;*/
+/*}*/
+/*.group-list button {*/
+/*    margin-right: 10%;*/
+/*    width: 12%;*/
+/*    height: 8%;*/
+/*}*/
 .group-table {
     border: 1px solid dodgerblue;
     margin: 2px auto;
@@ -120,6 +120,55 @@
     color: #fff;
     border: solid 1px #0254bf;
     border-radius: 5px;
+}
+
+/*content demo*/
+.content-title {
+    font-size: 20px;
+    height: 10%;
+    margin-left: 1%;
+    margin-top: 0.5%;
+}
+.content-inform {
+    border-right: 1px solid dodgerblue;
+    float: left;
+    height: 78%;
+    width: 50%;
+    margin-left: 2%;
+}
+.content-table {
+    /*border: 1px solid dodgerblue;*/
+    float: right;
+    /*text-align: center;*/
+    margin-right: 2%;
+    height: 78%;
+    width: 45%;
+}
+.content-table td {
+    border-bottom: 1px solid dodgerblue;
+}
+.content-bottom {
+    /*border-bottom: none;*/
+    text-align: center;
+}
+.content-table select {
+    height: 80%;
+    width: 90%;
+}
+.content-table button {
+    height: 60%;
+    width: 70%;
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+}
+.content-inform-user {
+    border-right: 1px solid dodgerblue;
+    float: left;
+    height: 78%;
+    width: 30%;
+    margin-left: 2%;
 }
 
 /*member demo*/

@@ -13,4 +13,5 @@ public interface UserService {
     public abstract int countGroupByAccount(String account);
     public abstract int countTaskByAccount(String account);
     public abstract ArrayList<Task> findTaskByMuster(String ID);
+    public abstract ArrayList<User> findUsersByMusterID(String ID);
 }

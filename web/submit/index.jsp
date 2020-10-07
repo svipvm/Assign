@@ -26,14 +26,7 @@
   <iframe name="frame-task" src=""></iframe>
 </div>
 <div class="content">
-  <div class="content-title">Hello World</div>
-  <hr color="dodgerblue">
-  <div class="content-inform-user">Hello World</div>
-  <form action="#" enctype="multipart/form-data" method="post">
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    <button type="submit">上传</button>
-  </form>
+  <iframe name="frame-content" src="userContent.jsp"></iframe>
 </div>
 <div class="member">
   <iframe name="frame-member" src=""></iframe>

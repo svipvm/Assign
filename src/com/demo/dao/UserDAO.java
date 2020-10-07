@@ -12,4 +12,5 @@ public interface UserDAO {
     public abstract int countGroupByAccount(String account) throws Exception;
     public abstract int countTaskByAccount(String account) throws Exception;
     public abstract ArrayList<Task> findTaskByMuster(String ID) throws Exception;
+    public abstract ArrayList<User> findUsersByMusterID(String ID) throws Exception;
 }
