@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.demo.vo.Task" %><%--
   Created by IntelliJ IDEA.
   User: vmice
   Date: 2020/10/7
@@ -13,6 +13,8 @@
   <title>Title</title>
 </head>
 <body>
+  <jsp:include page="/submit/UserContentServlet"/>
+  <%Task task = (Task) session.getAttribute("user-task");%>
   <div class="content-title">Hello World</div>
   <hr color="dodgerblue">
   <div class="content-inform-user">Hello World</div>

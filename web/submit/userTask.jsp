@@ -28,7 +28,9 @@
     </tr>
     <tr class="task-elem-inform">
       <td>开始时间：<%=task.getStart_time()%></td>
-      <td rowspan="2" class="task-elem-button"><button type="button">选择</button></td>
+      <td rowspan="2" class="task-elem-button">
+        <a href="userContent.jsp?taskID=<%=task.getID()%>"><button type="button">选择</button></a>
+      </td>
     </tr>
     <tr class="task-elem-inform">
       <td>结束时间：<%=task.getEnd_time()%></td>
