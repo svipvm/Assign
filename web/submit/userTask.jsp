@@ -29,7 +29,9 @@
     <tr class="task-elem-inform">
       <td>开始时间：<%=task.getStart_time()%></td>
       <td rowspan="2" class="task-elem-button">
-        <a href="userContent.jsp?taskID=<%=task.getID()%>"><button type="button">选择</button></a>
+        <a href="userContent.jsp?taskID=<%=task.getID()%>" target="frame-content">
+          <button type="button">选择</button>
+        </a>
       </td>
     </tr>
     <tr class="task-elem-inform">

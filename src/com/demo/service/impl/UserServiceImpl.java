@@ -116,4 +116,26 @@ public class UserServiceImpl implements UserService {
         }
         return task;
     }
+
+    @Override
+    public void addTaskTotal(String account, String ID) {
+        Connection conn = dbc.getConnection();
+        try {
+            DAOFactory.getUserDAOImpl(conn).addTaskTotal(account, ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    @Override
+    public boolean checkTaskByID(String ID) {
+        Connection conn = dbc.getConnection();
+        boolean flag = false;
+        try {
+            flag = DAOFactory.getUserDAOImpl(conn).checkTaskByID(ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
 }

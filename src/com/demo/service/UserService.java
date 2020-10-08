@@ -14,4 +14,6 @@ public interface UserService {
     public abstract ArrayList<Task> findTaskByMuster(String ID);
     public abstract ArrayList<User> findUsersByMusterID(String ID);
     public abstract Task findTaskByTaskID(String ID);
+    public abstract void addTaskTotal(String account, String ID);
+    public abstract boolean checkTaskByID(String ID);
 }

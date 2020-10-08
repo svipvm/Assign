@@ -28,7 +28,7 @@
   <iframe name="frame-task" src=""></iframe>
 </div>
 <div class="content">
-  <iframe name="frame-content" src="userContent.jsp"></iframe>
+  <iframe name="frame-content" src=""></iframe>
 </div>
 <div class="member">
   <iframe name="frame-member" src=""></iframe>

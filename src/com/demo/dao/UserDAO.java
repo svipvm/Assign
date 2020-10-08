@@ -14,4 +14,6 @@ public interface UserDAO {
     public abstract ArrayList<Task> findTaskByMuster(String ID) throws Exception;
     public abstract ArrayList<User> findUsersByMusterID(String ID) throws Exception;
     public abstract Task findTaskByTaskID(String ID) throws Exception;
+    public abstract void addTaskTotal(String account, String ID) throws Exception;
+    public abstract boolean checkTaskByID(String ID) throws Exception;
 }

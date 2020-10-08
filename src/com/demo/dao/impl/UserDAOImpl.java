@@ -1,12 +1,10 @@
 package com.demo.dao.impl;
 
 import com.demo.dao.UserDAO;
-import com.demo.vo.Admin;
 import com.demo.vo.Muster;
 import com.demo.vo.Task;
 import com.demo.vo.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,10 +78,10 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement psmt = null;
         ResultSet rsts = null;
         int result = 0;
-        String sql = "select count(*) from task, belong where belong.account=?" +
-                "and belong.ID=task.musterID and task.end_time is null";
+        String sql = "select count(*) from submit where account=? and total=?";
         psmt = conn.prepareStatement(sql);
         psmt.setString(1, account);
+        psmt.setInt(2, 0);
         rsts = psmt.executeQuery();
         if(rsts.next()) result = rsts.getInt(1);
         rsts.close();
@@ -158,5 +156,31 @@ public class UserDAOImpl implements UserDAO {
         rsts.close();
         psmt.close();
         return task;
+    }
+
+    @Override
+    public void addTaskTotal(String account, String ID) throws Exception {
+        PreparedStatement psmt = null;
+        String sql = "update submit set total=total+1 where account=? and ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        psmt.setString(2, ID);
+        psmt.executeUpdate();
+        psmt.close();
+    }
+
+    @Override
+    public boolean checkTaskByID(String ID) throws Exception {
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select * from task where ID=?";
+        boolean flag = false;
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            flag = rsts.getString("end_time") == null;
+        }
+        return flag;
     }
 }

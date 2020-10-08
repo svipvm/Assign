@@ -19,10 +19,10 @@
   <div class="content-title"><%=task.getTopic()%></div>
   <hr color="dodgerblue">
   <div class="content-inform-user"><%=task.getContent()%></div>
-  <form action="submit/UserUploadServlet" enctype="multipart/form-data" method="post">
-    <input type="file" name="uploadFile" />
-    <br/><br/>
-    <button type="submit">上传</button>
+  <form action="UserUploadServlet" enctype="multipart/form-data" method="post">
+    <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>
+    <button id="content-button" type="submit">上传</button>
   </form>
+  <div id="content-message">${message}</div>
 </body>
 </html>
