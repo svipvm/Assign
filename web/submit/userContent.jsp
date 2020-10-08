@@ -1,4 +1,5 @@
-<%@ page import="com.demo.vo.Task" %><%--
+<%@ page import="com.demo.vo.Task" %>
+<%--
   Created by IntelliJ IDEA.
   User: vmice
   Date: 2020/10/7
@@ -15,10 +16,10 @@
 <body>
   <jsp:include page="/submit/UserContentServlet"/>
   <%Task task = (Task) session.getAttribute("user-task");%>
-  <div class="content-title">Hello World</div>
+  <div class="content-title"><%=task.getTopic()%></div>
   <hr color="dodgerblue">
-  <div class="content-inform-user">Hello World</div>
-  <form action="#" enctype="multipart/form-data" method="post">
+  <div class="content-inform-user"><%=task.getContent()%></div>
+  <form action="submit/UserUploadServlet" enctype="multipart/form-data" method="post">
     <input type="file" name="uploadFile" />
     <br/><br/>
     <button type="submit">上传</button>

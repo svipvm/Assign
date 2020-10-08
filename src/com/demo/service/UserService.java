@@ -3,7 +3,6 @@ package com.demo.service;
 import com.demo.vo.Muster;
 import com.demo.vo.Task;
 import com.demo.vo.User;
-
 import java.util.ArrayList;
 
 public interface UserService {
@@ -14,4 +13,5 @@ public interface UserService {
     public abstract int countTaskByAccount(String account);
     public abstract ArrayList<Task> findTaskByMuster(String ID);
     public abstract ArrayList<User> findUsersByMusterID(String ID);
+    public abstract Task findTaskByTaskID(String ID);
 }

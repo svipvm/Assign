@@ -55,6 +55,8 @@ public class UserDAOImpl implements UserDAO {
             group.setName(rsts.getString("name"));
             groupList.add(group);
         }
+        rsts.close();
+        psmt.close();
         return groupList;
     }
 
@@ -68,6 +70,8 @@ public class UserDAOImpl implements UserDAO {
         psmt.setString(1, account);
         rsts = psmt.executeQuery();
         if(rsts.next()) result = rsts.getInt(1);
+        rsts.close();
+        psmt.close();
         return result;
     }
 
@@ -82,6 +86,8 @@ public class UserDAOImpl implements UserDAO {
         psmt.setString(1, account);
         rsts = psmt.executeQuery();
         if(rsts.next()) result = rsts.getInt(1);
+        rsts.close();
+        psmt.close();
         return result;
     }
 
@@ -105,6 +111,8 @@ public class UserDAOImpl implements UserDAO {
             task.setEnd_time(rsts.getString(7));
             tasks.add(task);
         }
+        rsts.close();
+        psmt.close();
         return tasks;
     }
 
@@ -124,6 +132,31 @@ public class UserDAOImpl implements UserDAO {
             user.setSex(rsts.getString("sex"));
             users.add(user);
         }
+        rsts.close();
+        psmt.close();
         return users;
+    }
+
+    @Override
+    public Task findTaskByTaskID(String ID) throws Exception {
+        Task task = new Task();
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select * from task where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            task.setID(rsts.getString("ID"));
+            task.setAccount(rsts.getString("account"));
+            task.setMusterID(rsts.getString("musterID"));
+            task.setTopic(rsts.getString("topic"));
+            task.setContent(rsts.getString("content"));
+            task.setStart_time(rsts.getString("start_time"));
+            task.setEnd_time(rsts.getString("end_time"));
+        }
+        rsts.close();
+        psmt.close();
+        return task;
     }
 }

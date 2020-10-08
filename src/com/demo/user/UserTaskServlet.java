@@ -28,6 +28,6 @@ public class UserTaskServlet extends HttpServlet {
         ArrayList<Task> tasks = userService.findTaskByMuster(groupID);
 
         HttpSession session = request.getSession();
-        session.setAttribute("user-task", tasks);
+        session.setAttribute("user-tasks", tasks);
     }
 }

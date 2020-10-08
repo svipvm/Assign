@@ -15,7 +15,7 @@
 </head>
 <body>
   <jsp:include page="/submit/UserTaskServlet"/>
-  <%ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("user-task");%>
+  <%ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("user-tasks");%>
   <%for(Task task : tasks) {%>
   <table class="task-table">
     <tr>
