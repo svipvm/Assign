@@ -21,13 +21,11 @@
     <tr><td>姓名:</td><td><%=inform.get(1)%></td></tr>
     <tr><td>性别:</td><td><%=inform.get(2)%></td></tr>
   </table>
-  <div class="inform-state">
-    <span><%=inform.get(4)%></span>
-    <button class="inform-button" type="button">刷新</button>
-  </div>
-  <div class="inform-state">
-    <span><%=inform.get(5)%></span>
-    <button class="inform-button" type="button">注销</button>
+<%--  <p id="inform-hr"><hr color="dodgerblue"></p>--%>
+  <div id="inform-button">
+    <button type="button">刷新</button>
+    <button type="button">更改密码</button>
+    <button type="button">注销</button>
   </div>
 </body>
 </html>

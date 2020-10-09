@@ -16,4 +16,5 @@ public interface UserDAO {
     public abstract Task findTaskByTaskID(String ID) throws Exception;
     public abstract void addTaskTotal(String account, String ID) throws Exception;
     public abstract boolean checkTaskByID(String ID) throws Exception;
+    public abstract int countMemberByID(String ID) throws Exception;
 }

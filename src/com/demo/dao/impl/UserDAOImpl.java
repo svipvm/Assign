@@ -183,4 +183,19 @@ public class UserDAOImpl implements UserDAO {
         }
         return flag;
     }
+
+    @Override
+    public int countMemberByID(String ID) throws Exception {
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        int count = 0;
+        String sql = "select count(*) from belong where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            count = rsts.getInt(1);
+        }
+        return count;
+    }
 }

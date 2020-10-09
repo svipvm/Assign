@@ -35,18 +35,15 @@ public class UserInformServlet extends HttpServlet {
         for (char aChar : chars) {
             sum = (sum * 3 + (int) aChar) % p;
         }
-        String src = String.format("../img/head/bot-%s.png", sum % 18 + 1);
+
+        String imgID = String.format("../img/head/bot-%s.png", sum % 18 + 1);
         int group_count = userService.countGroupByAccount(user.getAccount());
-        int task_count = userService.countTaskByAccount(user.getAccount());
-        String group_num = String.format("拥有小组数：%s", group_count);
-        String submit_num = String.format("还未提交数：%s", task_count);
 
         inform.add(user.getAccount());
         inform.add(user.getName());
         inform.add(user.getSex());
-        inform.add(src);
-        inform.add(group_num);
-        inform.add(submit_num);
+        inform.add(imgID);
+        inform.add(String.valueOf(group_count));
 
         session.setAttribute("user-inform", inform);
     }

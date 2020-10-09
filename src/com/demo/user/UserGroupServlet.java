@@ -5,6 +5,7 @@ import com.demo.service.UserService;
 import com.demo.vo.Muster;
 import com.demo.vo.User;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +30,13 @@ public class UserGroupServlet extends HttpServlet {
         UserService userService = ServiceFactory.getUserServiceImpl();
         ArrayList<Muster> groupList = userService.findGroupListByAccount(user.getAccount());
 
+        ArrayList<Integer> countList = new ArrayList<>();
+        for (Muster muster : groupList) {
+            String ID = muster.getID();
+            countList.add(userService.countMemberByID(ID));
+        }
+
         session.setAttribute("user-group", groupList);
+        session.setAttribute("user-member-count", countList);
     }
 }

@@ -76,7 +76,6 @@ public class UserUploadServlet extends HttpServlet {
     }
 
 
-
     private ArrayList<String> getSolveInform(HttpServletRequest request) throws ServletException, IOException {
         ArrayList<String> result = new ArrayList<>();
         HttpSession session = request.getSession();

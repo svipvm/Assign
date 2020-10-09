@@ -22,8 +22,11 @@
 <body>
   <jsp:include page="/submit/UserGroupServlet"/>
   <%ArrayList<Muster> groupList = (ArrayList<Muster>) session.getAttribute("user-group");%>
+  <%ArrayList<Integer> countList = (ArrayList<Integer>) session.getAttribute("user-member-count");%>
   <button id="group-button" type="button">加入小组</button>
-    <%for(Muster group : groupList) {%>
+  <%for(int i = 0; i < groupList.size(); i++) {%>
+    <%Muster group = groupList.get(i);%>
+    <%Integer count = countList.get(i);%>
     <table class="group-table">
       <tr>
         <td class="group-td-left"><%=group.getName()%></td>
@@ -32,14 +35,14 @@
         </td>
       </tr>
       <tr>
-        <td class="group-td-left"></td>
+        <td class="group-td-left">小组成员数：<%=count%></td>
         <td class="group-td-right">
           <a href="userTask.jsp?groupID=<%=group.getID()%>" target="frame-task">
             <button type="button" onclick="reMenber('<%=group.getID()%>')">选择</button>
           </a>
         </td>
       </tr>
-    </table>
+      </table>
     <%}%>
 </body>
 </html>
