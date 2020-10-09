@@ -25,8 +25,10 @@ public class UserContentServlet extends HttpServlet {
 
         UserService userService = ServiceFactory.getUserServiceImpl();
         Task task = userService.findTaskByTaskID(taskID);
+        String name = userService.findTaskNameByAccount(task.getAccount());
 
         HttpSession session = request.getSession();
         session.setAttribute("user-task", task);
+        session.setAttribute("user-task-name", name);
     }
 }

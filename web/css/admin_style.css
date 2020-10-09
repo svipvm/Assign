@@ -41,7 +41,7 @@ iframe {
     position: absolute;
     top: 19%;
     left: 35%;
-    height: 30%;
+    height: 35%;
     width: 30%;
     opacity: 90%;
     overflow: hidden;
@@ -52,9 +52,9 @@ iframe {
     border: 2px solid black;
     background-color: white;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 35%;
-    height: 31%;
+    height: 26%;
     width: 30%;
     opacity: 90%;
     overflow: hidden;

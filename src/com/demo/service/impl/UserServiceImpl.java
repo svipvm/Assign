@@ -70,6 +70,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public String findTaskNameByAccount(String account) {
+        String name = null;
+        Connection conn = dbc.getConnection();
+        try {
+            name = DAOFactory.getUserDAOImpl(conn).findTaskNameByAccount(account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return name;
+    }
+
+    @Override
     public int countMemberByID(String ID) {
         int count = 0;
         Connection conn = dbc.getConnection();

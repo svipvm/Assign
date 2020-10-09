@@ -17,4 +17,5 @@ public interface UserService {
     public abstract void addTaskTotal(String account, String ID);
     public abstract boolean checkTaskByID(String ID);
     public abstract int countMemberByID(String ID);
+    public abstract String findTaskNameByAccount(String account);
 }

@@ -185,6 +185,15 @@
     width: 25%;
     height: 20px;
 }
+#content-files {
+    border: solid 1px #0254bf;
+    position: absolute;
+    top: 39%;
+    left: 55%;
+    height: 38%;
+    width: 41%;
+    overflow-y: scroll;
+}
 
 /*member demo*/
 .member-list {

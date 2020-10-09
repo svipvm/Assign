@@ -185,6 +185,21 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public String findTaskNameByAccount(String account) throws Exception {
+        String name = new String("");
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select * from admin where account=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            name = rsts.getString("name");
+        }
+        return name;
+    }
+
+    @Override
     public int countMemberByID(String ID) throws Exception {
         PreparedStatement psmt = null;
         ResultSet rsts = null;
