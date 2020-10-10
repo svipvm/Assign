@@ -228,3 +228,28 @@
     height: 16%;
     border-radius: 50%;
 }
+
+/*modify dome*/
+.modify-table {
+    margin: 15% auto;
+    border: 1px solid dodgerblue;
+    width: 70%;
+    height: 50%;
+    text-align: center;
+}
+.modify-table td {
+    border: 1px solid dodgerblue;
+}
+.modify-table .left-td {
+    width: 30%;
+}
+.pw-text {
+    font-size: 20px;
+    width: 98%;
+    height: 60%;
+}
+/*.modify-table button {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*}*/

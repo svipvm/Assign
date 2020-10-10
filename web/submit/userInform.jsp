@@ -17,6 +17,9 @@
     function relogin() {
       parent.window.location.replace("UserReLoginServlet");
     }
+    function modifypw() {
+      parent.window.location.replace("userModify.jsp");
+    }
   </script>
   <title>Title</title>
 </head>
@@ -32,7 +35,7 @@
 <%--  <p id="inform-hr"><hr color="dodgerblue"></p>--%>
   <div id="inform-button">
     <button type="button" onclick="refresh()">刷新</button>
-    <button type="button">更改密码</button>
+    <button type="button" onclick="modifypw()">更改密码</button>
     <button type="button" onclick="relogin()">注销</button>
   </div>
 </body>
