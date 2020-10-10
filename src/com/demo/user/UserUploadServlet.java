@@ -54,6 +54,7 @@ public class UserUploadServlet extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdirs();
         }
+        ArrayList<String> fileNameList = new ArrayList<>();
         try {
             List<FileItem> formItems = upload.parseRequest(request);
 //            System.out.println(formItems.size());
@@ -63,11 +64,13 @@ public class UserUploadServlet extends HttpServlet {
                     String fileName = new File(item.getName()).getName();
                     String filePath = uploadPath + File.separator + fileName;
                     File storeFile = new File(filePath);
-                    System.out.println(filePath);
+                    fileNameList.add(fileName);
+//                    System.out.println(filePath);
                     item.write(storeFile);
                 }
             }
-            request.setAttribute("message", count + " 个文件上传成功!");
+            request.setAttribute("user-fileName", fileNameList);
+            request.setAttribute("message", count + " 个文件上传！");
             userService.addTaskTotal(inform.get(0), inform.get(1));
         } catch (Exception e) {
             request.setAttribute("message", "上传文件失败！");

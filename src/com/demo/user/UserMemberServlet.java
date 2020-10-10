@@ -28,7 +28,18 @@ public class UserMemberServlet extends HttpServlet {
         UserService userService = ServiceFactory.getUserServiceImpl();
         users = userService.findUsersByMusterID(groupID);
 
+        ArrayList<String> imgPath = new ArrayList<>();
+        for(User user : users) {
+            char[] chars = user.getAccount().toCharArray();
+            int sum = 0, p = 233;
+            for (char aChar : chars) {
+                sum = (sum * 3 + (int) aChar) % p;
+            }
+            imgPath.add(String.format("../img/head/bot-%s.png", sum % 18 + 1));
+        }
+
         HttpSession session = request.getSession();
         session.setAttribute("user-member", users);
+        session.setAttribute("user-member-img", imgPath);
     }
 }

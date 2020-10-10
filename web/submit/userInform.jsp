@@ -10,6 +10,14 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript">
+    function refresh() {
+      parent.window.location.reload();
+    }
+    function relogin() {
+      parent.window.location.replace("UserReLoginServlet");
+    }
+  </script>
   <title>Title</title>
 </head>
 <body>
@@ -23,9 +31,9 @@
   </table>
 <%--  <p id="inform-hr"><hr color="dodgerblue"></p>--%>
   <div id="inform-button">
-    <button type="button">刷新</button>
+    <button type="button" onclick="refresh()">刷新</button>
     <button type="button">更改密码</button>
-    <button type="button">注销</button>
+    <button type="button" onclick="relogin()">注销</button>
   </div>
 </body>
 </html>

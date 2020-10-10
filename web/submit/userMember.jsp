@@ -16,23 +16,16 @@
 <body>
   <jsp:include page="/submit/UserMemberServlet"/>
   <%ArrayList<User> users = (ArrayList<User>) session.getAttribute("user-member");%>
+  <%ArrayList<String> imgPath = (ArrayList<String>) session.getAttribute("user-member-img");%>
   <p align="center">小组成员</p>
   <hr color="#158ae7">
 <%--  <div class="member-list">--%>
     <table class="member-table">
-      <%for(User user : users) {%>
+      <%for(int i = 0; i < users.size(); i++) {%>
       <tr>
-        <%
-          char[] chars = user.getAccount().toCharArray();
-          int sum = 0, p = 233;
-          for (char aChar : chars) {
-            sum = (sum * 3 + (int) aChar) % p;
-          }
-          String path = String.format("../img/head/bot-%s.png", sum % 18 + 1);
-        %>
-        <td class="member-img"><img src="<%=path%>"></td>
-        <td class="member-ID"><%=user.getAccount()%></td>
-        <td class="member-name"><%=user.getName()%></td>
+        <td class="member-img"><img src="<%=imgPath.get(i)%>"></td>
+        <td class="member-ID"><%=users.get(i).getAccount()%></td>
+        <td class="member-name"><%=users.get(i).getName()%></td>
       </tr>
       <%}%>
     </table>

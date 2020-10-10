@@ -20,6 +20,8 @@ import java.io.IOException;
 public class LoginUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        request.setCharacterEncoding("utf-8");
+
         String account = request.getParameter("account");
         String password = request.getParameter("password");
 
