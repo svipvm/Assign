@@ -18,4 +18,5 @@ public interface UserService {
     public abstract boolean checkTaskByID(String ID);
     public abstract int countMemberByID(String ID);
     public abstract String findTaskNameByAccount(String account);
+    public abstract boolean modifyPassword(String account, String password);
 }

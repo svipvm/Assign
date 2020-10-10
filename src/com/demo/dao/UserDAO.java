@@ -18,4 +18,5 @@ public interface UserDAO {
     public abstract boolean checkTaskByID(String ID) throws Exception;
     public abstract int countMemberByID(String ID) throws Exception;
     public abstract String findTaskNameByAccount(String account) throws Exception;
+    public abstract boolean modifyPassword(String account, String password) throws Exception;
 }

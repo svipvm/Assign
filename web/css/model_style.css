@@ -231,7 +231,7 @@
 
 /*modify dome*/
 .modify-table {
-    margin: 15% auto;
+    margin: 6% auto;
     border: 1px solid dodgerblue;
     width: 70%;
     height: 50%;
@@ -247,6 +247,23 @@
     font-size: 20px;
     width: 98%;
     height: 60%;
+}
+.modify-table button {
+    height: 60%;
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+}
+#modify-message {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    margin-left: 10%;
+    /*border: 1px solid dodgerblue;*/
+    text-align: center;
+    width: 80%;
+    height: 8%;
 }
 /*.modify-table button {*/
 /*    position: absolute;*/

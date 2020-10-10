@@ -181,6 +181,22 @@ public class UserDAOImpl implements UserDAO {
         if(rsts.next()) {
             flag = rsts.getString("end_time") == null;
         }
+        rsts.close();
+        psmt.close();
+        return flag;
+    }
+
+    @Override
+    public boolean modifyPassword(String account, String password) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "update user set password=? where account=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, password);
+        psmt.setString(2, account);
+        psmt.executeUpdate();
+        flag = true;
+        psmt.close();
         return flag;
     }
 

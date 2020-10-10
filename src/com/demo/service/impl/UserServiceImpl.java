@@ -70,6 +70,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean modifyPassword(String account, String password) {
+        Connection conn = dbc.getConnection();
+        boolean flag = false;
+        try {
+            flag = DAOFactory.getUserDAOImpl(conn).modifyPassword(account, password);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public String findTaskNameByAccount(String account) {
         String name = null;
         Connection conn = dbc.getConnection();

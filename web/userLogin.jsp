@@ -40,7 +40,7 @@
       </ul>
     </form>
 <%--    <p class="message">Hello World!</p>--%>
-    <p class="message">${error}</p>
+    <p class="message">${message}</p>
   </div>
 </div>
 </body>

@@ -18,7 +18,11 @@
   <div class="modify-box">
     <h2>用户：<%=user.getName()%></h2>
     <hr color="dodgerblue">
-    <form action="submit/UserModifyServlet" method="post">
+    <ul>
+      <li>密码长度为 6~20 位，支持字母大小写和数字</li>
+      <li>密码更改成功后将自动返回登录界面</li>
+    </ul>
+    <form action="UserModifyServlet" method="post">
       <table class="modify-table">
         <tr>
           <td class="left-td">当前密码：</td>
@@ -33,10 +37,9 @@
           <td><input class="pw-text" type="password" name="re_password"></td>
         </tr>
         <tr><td colspan="2"><button type="submit">更改密码</button></td></tr>
-
-
       </table>
     </form>
+    <div id="modify-message">${message}</div>
   </div>
 </body>
 </html>
