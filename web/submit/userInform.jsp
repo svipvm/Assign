@@ -10,17 +10,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
-  <script type="text/javascript">
-    function refresh() {
-      parent.window.location.reload();
-    }
-    function relogin() {
-      parent.window.location.replace("UserReLoginServlet");
-    }
-    function modifypw() {
-      parent.window.location.replace("userModify.jsp");
-    }
-  </script>
+  <script type="text/javascript" src="../js/request.js"></script>
   <title>Title</title>
 </head>
 <body>
@@ -35,7 +25,9 @@
 <%--  <p id="inform-hr"><hr color="dodgerblue"></p>--%>
   <div id="inform-button">
     <button type="button" onclick="refresh()">刷新</button>
+    &nbsp;&nbsp;
     <button type="button" onclick="modifypw()">更改密码</button>
+    &nbsp;&nbsp;
     <button type="button" onclick="relogin()">注销</button>
   </div>
 </body>

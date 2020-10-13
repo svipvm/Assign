@@ -22,10 +22,10 @@
     <div class="content-title"><%=task.getTopic()%></div>
   <hr color="dodgerblue">
   <div class="content-inform-user">
-    <p><%=task.getContent()%> Hello World Hello World Hello World Hello World Hello World Hello World</p>
-    <p>发布者：<%=taskName%></p>
-    <p>开始时间：<%=task.getStart_time()%></p>
-    <p>结束时间：<%=task.getEnd_time()%></p>
+    <p><%=task.getContent()%></p>
+    发布者：<%=taskName%><br>
+    开始时间：<%=task.getStart_time()%><br>
+    结束时间：<%=task.getEnd_time()%>
   </div>
   <form action="UserUploadServlet" enctype="multipart/form-data" method="post">
     <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>
@@ -36,8 +36,10 @@
       <%for(int i = 1; i <= fileName.size(); i++) {%>
         <%=i%>：<%=fileName.get(i - 1)%><br/>
       <%}%>
-    <%} else {%>
+    <%} else if(task.getEnd_time() == null) {%>
       <p>请选择文件，并上传！</p>
+    <%} else {%>
+      <p>任务已结束，无法提交！</p>
     <%}%>
   </div>
   <div id="content-message">${message}</div>

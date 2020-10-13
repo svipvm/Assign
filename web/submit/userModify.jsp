@@ -11,6 +11,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/admin_style.css">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript" src="../js/modify.js"></script>
   <title>Title</title>
 </head>
 <body>
@@ -22,19 +23,19 @@
       <li>密码长度为 6~20 位，支持字母大小写和数字</li>
       <li>密码更改成功后将自动返回登录界面</li>
     </ul>
-    <form action="UserModifyServlet" method="post">
+    <form action="UserModifyServlet" method="post" onsubmit="return checkModify()">
       <table class="modify-table">
         <tr>
           <td class="left-td">当前密码：</td>
-          <td><input class="pw-text" type="password" name="old_password"></td>
+          <td><input class="pw-text" type="password" name="old_password" id="old_password"></td>
         </tr>
         <tr>
           <td class="left-td">新的密码：</td>
-          <td><input class="pw-text" type="password" name="new_password"></td>
+          <td><input class="pw-text" type="password" name="new_password" id="new_password"></td>
         </tr>
         <tr>
           <td class="left-td">确认密码：</td>
-          <td><input class="pw-text" type="password" name="re_password"></td>
+          <td><input class="pw-text" type="password" name="re_password" id="re_password"></td>
         </tr>
         <tr><td colspan="2"><button type="submit">更改密码</button></td></tr>
       </table>
