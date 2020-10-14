@@ -43,6 +43,18 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public ArrayList<User> findUsersByMusterID(String ID) {
+        ArrayList<User> users = null;
+        Connection conn = dbc.getConnection();
+        try {
+            users = DAOFactory.getAdminDAOImpl(conn).findUsersByMusterID(ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return users;
+    }
+
+    @Override
     public String findTaskNameByAccount(String account) {
         String name = null;
         Connection conn = dbc.getConnection();

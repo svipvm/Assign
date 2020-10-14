@@ -2,6 +2,11 @@ function reMenber(value) {
     var memberFrame = parent.document.getElementsByName('frame-member')[0];
     memberFrame.src = "userMember.jsp?groupID=" + value;
 }
+function reAdminMenber(value) {
+    var memberFrame = parent.document.getElementsByName('frame-member')[0];
+    memberFrame.src = "adminMember.jsp?groupID=" + value;
+}
+
 function refresh() {
     parent.window.location.reload();
 }

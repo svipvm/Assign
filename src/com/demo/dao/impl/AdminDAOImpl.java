@@ -5,6 +5,7 @@ import com.demo.util.DBConnection;
 import com.demo.vo.Admin;
 import com.demo.vo.Muster;
 import com.demo.vo.Task;
+import com.demo.vo.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +32,27 @@ public class AdminDAOImpl implements AdminDAO {
             count = rsts.getInt(1);
         }
         return count;
+    }
+
+    @Override
+    public ArrayList<User> findUsersByMusterID(String ID) throws Exception {
+        ArrayList<User> users = new ArrayList<>();
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select * from belong, user where ID=? and belong.account=user.account";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        while(rsts.next()) {
+            User user = new User();
+            user.setAccount(rsts.getString("account"));
+            user.setName(rsts.getString("name"));
+            user.setSex(rsts.getString("sex"));
+            users.add(user);
+        }
+        rsts.close();
+        psmt.close();
+        return users;
     }
 
     @Override

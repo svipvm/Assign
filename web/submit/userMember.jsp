@@ -19,16 +19,14 @@
   <%ArrayList<String> imgPath = (ArrayList<String>) session.getAttribute("user-member-img");%>
   <p align="center">小组成员</p>
   <hr color="#158ae7">
-<%--  <div class="member-list">--%>
-    <table class="member-table">
-      <%for(int i = 0; i < users.size(); i++) {%>
-      <tr>
-        <td class="member-img"><img src="<%=imgPath.get(i)%>"></td>
-        <td class="member-ID"><%=users.get(i).getAccount()%></td>
-        <td class="member-name"><%=users.get(i).getName()%></td>
-      </tr>
-      <%}%>
-    </table>
-<%--  </div>--%>
+  <table class="member-table">
+    <%for(int i = 0; i < users.size(); i++) {%>
+    <tr>
+      <td class="member-img"><img src="<%=imgPath.get(i)%>"></td>
+      <td class="member-ID"><%=users.get(i).getAccount()%></td>
+      <td class="member-name"><%=users.get(i).getName()%></td>
+    </tr>
+    <%}%>
+  </table>
 </body>
 </html>

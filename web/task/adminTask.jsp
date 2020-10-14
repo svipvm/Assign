@@ -31,7 +31,7 @@
       <td>开始时间：<%=task.getStart_time()%></td>
       <td rowspan="2" class="task-elem-button">
         <a href="adminContent.jsp?taskID=<%=task.getID()%>" target="frame-content">
-          <button type="button" onclick="">选择</button>
+          <button type="button" onclick="reAdminMenber('<%=request.getParameter("groupID")%>')">选择</button>
         </a>
       </td>
     </tr>
