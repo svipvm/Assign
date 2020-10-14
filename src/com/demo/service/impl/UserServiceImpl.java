@@ -90,7 +90,6 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
-
         return name;
     }
 
