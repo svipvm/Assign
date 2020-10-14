@@ -27,6 +27,7 @@ public class LoginAdminServlet extends HttpServlet {
 
         if(adminService.loginAdmin(admin).equals("success")) {
             HttpSession session = request.getSession();
+            admin = adminService.findAdminByAccount(account);
             session.setAttribute("admin", admin);
             response.sendRedirect("task/index.jsp");
         } else {

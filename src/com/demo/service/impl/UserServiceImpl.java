@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
                 messge = "success";
             }
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return messge;
     }
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
         try {
             user = DAOFactory.getUserDAOImpl(conn).findByAccount(account);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return user;
     }
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         try {
             groupList = DAOFactory.getUserDAOImpl(conn).findGroupListByAccount(account);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return groupList;
     }
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
         try {
             result = DAOFactory.getUserDAOImpl(conn).countGroupByAccount(account);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return result;
     }
@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService {
         try {
             flag = DAOFactory.getUserDAOImpl(conn).modifyPassword(account, password);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return flag;
     }
@@ -88,7 +88,7 @@ public class UserServiceImpl implements UserService {
         try {
             name = DAOFactory.getUserDAOImpl(conn).findTaskNameByAccount(account);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
 
         return name;
@@ -101,7 +101,7 @@ public class UserServiceImpl implements UserService {
         try {
             count = DAOFactory.getUserDAOImpl(conn).countMemberByID(ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return count;
     }
@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
         try {
             result = DAOFactory.getUserDAOImpl(conn).countTaskByAccount(account);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return result;
     }
@@ -125,7 +125,7 @@ public class UserServiceImpl implements UserService {
         try {
             tasks = DAOFactory.getUserDAOImpl(conn).findTaskByMuster(ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return tasks;
     }
@@ -137,7 +137,7 @@ public class UserServiceImpl implements UserService {
         try {
             users = DAOFactory.getUserDAOImpl(conn).findUsersByMusterID(ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return users;
     }
@@ -149,7 +149,7 @@ public class UserServiceImpl implements UserService {
         try {
             task = DAOFactory.getUserDAOImpl(conn).findTaskByTaskID(ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return task;
     }
@@ -160,7 +160,7 @@ public class UserServiceImpl implements UserService {
         try {
             DAOFactory.getUserDAOImpl(conn).addTaskTotal(account, ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -171,7 +171,7 @@ public class UserServiceImpl implements UserService {
         try {
             flag = DAOFactory.getUserDAOImpl(conn).checkTaskByID(ID);
         } catch (Exception e) {
-            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return flag;
     }
