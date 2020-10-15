@@ -10,6 +10,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript" src="../js/request.js"></script>
   <title>Title</title>
 </head>
 <body>
@@ -24,9 +25,9 @@
 <div id="inform-button">
   <button type="button" onclick="refresh()">刷新</button>
   &nbsp;&nbsp;
-  <button type="button" onclick="modifypw()">更改密码</button>
+  <button type="button" onclick="adminModifypw()">更改密码</button>
   &nbsp;&nbsp;
-  <button type="button" onclick="relogin()">注销</button>
+  <button type="button" onclick="reAdminLogin()">注销</button>
 </div>
 </body>
 </html>

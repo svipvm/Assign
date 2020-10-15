@@ -20,7 +20,7 @@
     <h2>用户：<%=user.getName()%></h2>
     <hr color="dodgerblue">
     <ul>
-      <li>密码长度为 6~20 位，支持字母大小写和数字</li>
+      <li>密码长度为 6~20 位，不允许特殊字符</li>
       <li>密码更改成功后将自动返回登录界面</li>
     </ul>
     <form action="UserModifyServlet" method="post" onsubmit="return checkModify()">

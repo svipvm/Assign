@@ -16,3 +16,9 @@ function relogin() {
 function modifypw() {
     parent.window.location.replace("userModify.jsp");
 }
+function reAdminLogin() {
+    parent.window.location.replace("AdminReLoginServlet");
+}
+function adminModifypw() {
+    parent.window.location.replace("adminModify.jsp");
+}

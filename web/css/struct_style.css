@@ -86,3 +86,6 @@ iframe {
     width: 24%;
     height: 50%;
 }
+.modify-box ul {
+    text-align: left;
+}

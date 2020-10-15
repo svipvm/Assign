@@ -20,6 +20,12 @@ public class UserModifyServlet extends HttpServlet {
         String new_password = request.getParameter("new_password");
         String re_password = request.getParameter("re_password");
 
+        if(new_password.length() < 6 || 20 < new_password.length()) {
+            request.setAttribute("message", "新的密码不合要求！");
+            request.getRequestDispatcher("userModify.jsp").forward(request, response);
+            return;
+        }
+
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
