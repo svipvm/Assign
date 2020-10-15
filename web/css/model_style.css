@@ -197,6 +197,24 @@ body {
     overflow-y: scroll;
     /*overflow-x: scroll;*/
 }
+#table-files {
+    text-align: center;
+    position: absolute;
+    left: 54%;
+    top: 22%;
+    width: 43%;
+    height: 75%;
+}
+#table-files td {
+    border-bottom: 1px solid dodgerblue;
+    width: 50%;
+}
+#table-files button {
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+}
 
 /*member demo*/
 .member-list {
@@ -219,6 +237,9 @@ body {
 }
 .member-img {
     width: 15%;
+}
+.member-point {
+    width: 5%;
 }
 .member-img img {
     width: 100%;

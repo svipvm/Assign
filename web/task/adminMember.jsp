@@ -22,7 +22,9 @@
   <table class="member-table">
     <%for(int i = 0; i < users.size(); i++) {%>
     <tr>
-<%--      <td class="member-img"><img src="<%=imgPath.get(i)%>"></td>--%>
+      <td class="member-point">
+        <div class="task-state-point" style="background-color:#67C23A"></div>
+      </td>
       <td class="member-ID"><%=users.get(i).getAccount()%></td>
       <td class="member-name"><%=users.get(i).getName()%></td>
     </tr>

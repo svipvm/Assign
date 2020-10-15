@@ -16,31 +16,41 @@
 <body>
   <jsp:include page="/task/AdminContentServlet"/>
   <%Task task = (Task) session.getAttribute("admin-task");%>
-  <%String taskName = (String) session.getAttribute("admin-task-name");%>
+<%--  <%String taskName = (String) session.getAttribute("admin-task-name");%>--%>
 <%--  <%ArrayList<String> fileName = (ArrayList<String>) request.getAttribute("admin-fileName");%>--%>
   <div class="content-title"><%=task.getTopic()%></div>
   <hr color="dodgerblue">
   <div class="content-inform-user">
     <p><%=task.getContent()%></p>
-    发布者：<%=taskName%><br>
+<%--    发布者：<%=taskName%><br>--%>
     开始时间：<%=task.getStart_time()%><br>
     结束时间：<%=task.getEnd_time()%>
   </div>
-  <form action="UserUploadServlet" enctype="multipart/form-data" method="post">
-    <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>
-    <button id="content-button" type="submit">上传</button>
-  </form>
-<%--  <div id="content-files">--%>
-<%--    <%if(fileName != null) {%>--%>
-<%--    <%for(int i = 1; i <= fileName.size(); i++) {%>--%>
-<%--    <%=i%>：<%=fileName.get(i - 1)%><br/>--%>
-<%--    <%}%>--%>
-<%--    <%} else if(task.getEnd_time() == null) {%>--%>
-<%--    <p>请选择文件，并上传！</p>--%>
-<%--    <%} else {%>--%>
-<%--    <p>任务已结束，无法提交！</p>--%>
-<%--    <%}%>--%>
-<%--  </div>--%>
+  <table id="table-files">
+    <tr>
+      <td>应交人数：</td>
+      <td>Hello</td>
+    </tr>
+    <tr>
+      <td>实交人数：</td>
+      <td>Hello</td>
+    </tr>
+    <tr>
+      <td>文件大小：</td>
+      <td>Hello</td>
+    </tr>
+    <tr>
+      <td><button>刷新</button></td>
+      <td><button>结束</button></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button>收任务</button></td>
+    </tr>
+  </table>
+<%--  <form action="UserUploadServlet" enctype="multipart/form-data" method="post">--%>
+<%--    <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>--%>
+<%--    <button id="content-button" type="submit">上传</button>--%>
+<%--  </form>--%>
   <div id="content-message">${message}</div>
 </body>
 </html>

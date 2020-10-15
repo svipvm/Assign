@@ -25,7 +25,7 @@
     <tr>
       <td class="group-td-left"><%=group.getName()%></td>
       <td class="group-td-right">
-        <%--          <button type="button">选择</button>--%>
+          <button type="button">管理</button>
       </td>
     </tr>
     <tr>
