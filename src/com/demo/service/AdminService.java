@@ -16,4 +16,6 @@ public interface AdminService {
     public abstract Task findTaskByTaskID(String ID);
     public abstract String findTaskNameByAccount(String account);
     public abstract ArrayList<User> findUsersByMusterID(String ID);
+    public abstract boolean haltTaskByID(String ID);
+    public abstract int countAcceptionByID(String ID);
 }

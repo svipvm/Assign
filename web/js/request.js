@@ -22,3 +22,9 @@ function reAdminLogin() {
 function adminModifypw() {
     parent.window.location.replace("adminModify.jsp");
 }
+function adminContentRefresh(target) {
+    window.location.replace("adminContent.jsp?taskID=" + target);
+}
+function adminTaskHalt() {
+    window.location.replace("AdminTaskHaltServlet");
+}

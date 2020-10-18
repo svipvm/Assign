@@ -56,6 +56,33 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public boolean haltTaskByID(String ID) throws Exception {
+        PreparedStatement psmt = null;
+        String sql = "update task set end_time=now() where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        psmt.executeUpdate();
+        return true;
+    }
+
+    @Override
+    public int countAcceptionByID(String ID) throws Exception {
+        int count = 0;
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select count(*) from submit where ID=? and total=0";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            count = rsts.getInt(1);
+        }
+        rsts.close();
+        psmt.close();
+        return count;
+    }
+
+    @Override
     public String findTaskNameByAccount(String account) throws Exception {
         String name = new String("");
         PreparedStatement psmt = null;

@@ -11,6 +11,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript" src="../js/request.js"></script>
   <title>Title</title>
 </head>
 <body>
@@ -29,19 +30,19 @@
   <table id="table-files">
     <tr>
       <td>应交人数：</td>
-      <td>Hello</td>
+      <td><%=session.getAttribute("admin-sum")%></td>
     </tr>
     <tr>
       <td>实交人数：</td>
-      <td>Hello</td>
+      <td><%=session.getAttribute("admin-count")%></td>
     </tr>
     <tr>
       <td>文件大小：</td>
-      <td>Hello</td>
+      <td><%=session.getAttribute("admin-fileSize")%></td>
     </tr>
     <tr>
-      <td><button>刷新</button></td>
-      <td><button>结束</button></td>
+      <td><button onclick="adminContentRefresh(<%=task.getID()%>)">刷新</button></td>
+      <td><button onclick="adminTaskHalt()">结束</button></td>
     </tr>
     <tr>
       <td colspan="2"><button>收任务</button></td>
