@@ -8,6 +8,15 @@ public class Task {
     private String content;
     private String start_time;
     private String end_time;
+    private Integer down;
+
+    public Integer getDown() {
+        return down;
+    }
+
+    public void setDown(Integer down) {
+        this.down = down;
+    }
 
     public String getMusterID() {
         return musterID;

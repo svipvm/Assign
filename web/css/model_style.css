@@ -210,6 +210,8 @@ body {
     width: 50%;
 }
 #table-files button {
+    height: 80%;
+    width: 50%;
     background-color: #158ae7;
     color: #fff;
     border: solid 1px #0254bf;

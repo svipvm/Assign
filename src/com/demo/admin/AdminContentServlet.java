@@ -26,15 +26,15 @@ public class AdminContentServlet extends HttpServlet {
 
         AdminService adminService = ServiceFactory.getAdminServiceImple();
         Task task = adminService.findTaskByTaskID(taskID);
-//        String name = adminService.findTaskNameByAccount(task.getAccount());
         int sum = adminService.countMemberByID(task.getMusterID());
         int count = adminService.countAcceptionByID(task.getID());
+//        int down = adminService.countTaskDownloadByID(task.getID());
 
         HttpSession session = request.getSession();
         session.setAttribute("admin-task", task);
         session.setAttribute("admin-sum", sum);
         session.setAttribute("admin-count", count);
-//        session.setAttribute("admin-task-name", name);
+//        session.setAttribute("admin-down", down);
 
     }
 }

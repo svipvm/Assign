@@ -5,14 +5,14 @@ public class Admin {
     private String password;
     private String name;
     private String sex;
-    private Integer rank;
+    private Integer grade;
 
-    public Integer getRank() {
-        return rank;
+    public Integer getGrade() {
+        return grade;
     }
 
-    public void setRank(Integer rank) {
-        this.rank = rank;
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     public String getAccount() {

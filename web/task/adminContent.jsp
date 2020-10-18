@@ -37,8 +37,8 @@
       <td><%=session.getAttribute("admin-count")%></td>
     </tr>
     <tr>
-      <td>文件大小：</td>
-      <td><%=session.getAttribute("admin-fileSize")%></td>
+      <td>收取次数：</td>
+      <td><%=session.getAttribute("admin-down")%></td>
     </tr>
     <tr>
       <td><button onclick="adminContentRefresh(<%=task.getID()%>)">刷新</button></td>

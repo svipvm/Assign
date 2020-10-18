@@ -20,6 +20,21 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public int countTaskDownloadByID(String ID) throws Exception {
+        int count = 0;
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select down from task where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            count = rsts.getInt("down");
+        }
+        return count;
+    }
+
+    @Override
     public int countMemberByID(String ID) throws Exception {
         PreparedStatement psmt = null;
         ResultSet rsts = null;

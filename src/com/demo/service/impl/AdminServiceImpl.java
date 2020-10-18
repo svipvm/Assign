@@ -45,6 +45,18 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public int countTaskDownloadByID(String ID) {
+        int count = 0;
+        Connection conn = dbc.getConnection();
+        try {
+            count = DAOFactory.getAdminDAOImpl(conn).countTaskDownloadByID(ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return count;
+    }
+
+    @Override
     public int countMemberByID(String ID) {
         int count = 0;
         Connection conn = dbc.getConnection();

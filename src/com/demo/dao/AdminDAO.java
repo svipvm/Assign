@@ -18,4 +18,5 @@ public interface AdminDAO {
     public abstract ArrayList<User> findUsersByMusterID(String ID) throws Exception;
     public abstract boolean haltTaskByID(String ID) throws Exception;
     public abstract int countAcceptionByID(String ID) throws Exception;
+    public abstract int countTaskDownloadByID(String ID) throws Exception;
 }
