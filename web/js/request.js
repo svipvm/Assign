@@ -28,3 +28,6 @@ function adminContentRefresh(target) {
 function adminTaskHalt() {
     window.location.replace("AdminTaskHaltServlet");
 }
+function adminAcceptFile() {
+    window.location.replace("AdminAcceptServlet");
+}

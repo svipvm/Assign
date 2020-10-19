@@ -27,6 +27,7 @@
     开始时间：<%=task.getStart_time()%><br>
     结束时间：<%=task.getEnd_time()%>
   </div>
+  <div id="content-task-message">${message}</div>
   <table id="table-files">
     <tr>
       <td>应交人数：</td>
@@ -45,13 +46,13 @@
       <td><button onclick="adminTaskHalt()">结束</button></td>
     </tr>
     <tr>
-      <td colspan="2"><button>收任务</button></td>
+      <td colspan="2"><button onclick="adminAcceptFile()">收任务</button></td>
     </tr>
   </table>
 <%--  <form action="UserUploadServlet" enctype="multipart/form-data" method="post">--%>
 <%--    <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>--%>
 <%--    <button id="content-button" type="submit">上传</button>--%>
 <%--  </form>--%>
-  <div id="content-message">${message}</div>
+<%--  <div id="content-message">${message}</div>--%>
 </body>
 </html>

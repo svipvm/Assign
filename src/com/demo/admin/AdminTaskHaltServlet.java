@@ -24,9 +24,16 @@ public class AdminTaskHaltServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Task task = (Task) session.getAttribute("admin-task");
 
-        AdminService adminService = ServiceFactory.getAdminServiceImple();
-        boolean flag = adminService.haltTaskByID(task.getID());
+        String url = "adminContent.jsp?taskID=" + task.getID();
 
-        response.sendRedirect("adminContent.jsp?taskID=" + task.getID());
+        if(task.getEnd_time() != null) {
+            request.setAttribute("message", "任务已结束！");
+            request.getRequestDispatcher(url).forward(request, response);
+        } else {
+            AdminService adminService = ServiceFactory.getAdminServiceImple();
+            boolean flag = adminService.haltTaskByID(task.getID());
+            response.sendRedirect(url);
+        }
+
     }
 }
