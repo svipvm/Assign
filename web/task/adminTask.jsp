@@ -41,5 +41,7 @@
     </tr>
   </table>
   <%}%>
+  <div id="task-add"><button type="button">+</button></div>
+  <br><br>
 </body>
 </html>
