@@ -7,6 +7,7 @@ function reAdminMenber(value) {
     memberFrame.src = "adminMember.jsp?groupID=" + value;
 }
 
+
 function refresh() {
     parent.window.location.reload();
 }
@@ -32,6 +33,9 @@ function adminTaskHalt() {
 }
 function adminAcceptFile() {
     window.location.replace("AdminAcceptServlet");
+}
+function adminAddGroup() {
+    parent.window.location.replace("adminAddGroup.jsp");
 }
 // function adminManager(target) {
 //     parent.window.location.replace("adminManager.jsp?groupID=" + target);

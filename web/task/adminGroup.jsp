@@ -18,7 +18,7 @@
   <jsp:include page="/task/AdminGroupServlet"/>
   <%ArrayList<Muster> groupList = (ArrayList<Muster>) session.getAttribute("admin-group");%>
   <%ArrayList<Integer> countList = (ArrayList<Integer>) session.getAttribute("admin-member-count");%>
-  <button id="group-button" type="button">加入小组</button>
+  <button id="group-button" type="button" onclick="adminAddGroup()">添加小组</button>
   <%for(int i = 0; i < groupList.size(); i++) {%>
   <%Muster group = groupList.get(i);%>
   <%Integer count = countList.get(i);%>

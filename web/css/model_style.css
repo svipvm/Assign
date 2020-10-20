@@ -330,3 +330,37 @@ body {
 /*    top: 0;*/
 /*    left: 0;*/
 /*}*/
+
+#add-group {
+    border: 1px solid dodgerblue;
+    background-color: white;
+    margin: 15% auto 0 auto;
+    height: 25%;
+    width: 25%;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+#add-group table {
+    margin: 3% auto 0 auto;
+    text-align: center;
+    height: 40%;
+    /*line-height: 12%;*/
+}
+#add-group tr {
+    height: 50%;
+}
+#add-group button {
+    width: 80%;
+    background-color: #158ae7;
+    color: #fff;
+    /*border: solid 1px #0254bf;*/
+    border-radius: 5px;
+}
+#add-group-message {
+    /*border: 1px solid dodgerblue;*/
+    height: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
