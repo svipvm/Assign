@@ -19,7 +19,7 @@
   <div id="add-group">
     <h2>添加分组 - 管理员：<%=admin.getName()%></h2>
     <hr>
-    <form action="#" method="post" onsubmit="return adminCheckGroup()">
+    <form action="AdminAddGroupServlet" method="post">
       <table>
         <tr>
           <td>小组名称：</td>
