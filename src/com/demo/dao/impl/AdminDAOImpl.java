@@ -81,6 +81,19 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public boolean addTaskDownloadByID(String ID) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "update task set down=down+1 where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        if(psmt.executeUpdate() == 1) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    @Override
     public int countAcceptionByID(String ID) throws Exception {
         int count = 0;
         PreparedStatement psmt = null;
@@ -133,6 +146,20 @@ public class AdminDAOImpl implements AdminDAO {
         rsts.close();
         psmt.close();
         return task;
+    }
+
+    @Override
+    public boolean modifyPassword(String account, String password) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "update admin set password=? where account=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, password);
+        psmt.setString(2, account);
+        if(psmt.executeUpdate() == 1) {
+            flag = true;
+        }
+        return flag;
     }
 
     @Override

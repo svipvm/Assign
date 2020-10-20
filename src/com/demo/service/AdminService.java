@@ -19,4 +19,6 @@ public interface AdminService {
     public abstract boolean haltTaskByID(String ID);
     public abstract int countAcceptionByID(String ID);
     public abstract int countTaskDownloadByID(String ID);
+    public abstract boolean addTaskDownloadByID(String ID);
+    public abstract boolean modifyPassword(String account, String password);
 }

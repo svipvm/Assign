@@ -19,4 +19,6 @@ public interface AdminDAO {
     public abstract boolean haltTaskByID(String ID) throws Exception;
     public abstract int countAcceptionByID(String ID) throws Exception;
     public abstract int countTaskDownloadByID(String ID) throws Exception;
+    public abstract boolean addTaskDownloadByID(String ID) throws Exception;
+    public abstract  boolean modifyPassword(String account, String password) throws Exception;
 }

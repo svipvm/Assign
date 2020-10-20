@@ -11,6 +11,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+  <script type="text/javascript" src="../js/request.js"></script>
   <title>Title</title>
 </head>
 <body>
@@ -25,7 +26,10 @@
     <tr>
       <td class="group-td-left"><%=group.getName()%></td>
       <td class="group-td-right">
+<%--        <button type="button" onclick="adminManager(<%=group.getID()%>)">管理</button>--%>
+        <a href="adminManager.jsp?groupID=<%=group.getID()%>" target="_parent">
           <button type="button">管理</button>
+        </a>
       </td>
     </tr>
     <tr>

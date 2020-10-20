@@ -19,6 +19,32 @@ public class AdminServiceImpl implements AdminService {
     private final DBConnection dbc = new DBConnection();
 
     @Override
+    public boolean addTaskDownloadByID(String ID) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.addTaskDownloadByID(ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean modifyPassword(String account, String password) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.modifyPassword(account, password);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public int countAcceptionByID(String ID) {
         int count = 0;
         Connection conn = dbc.getConnection();

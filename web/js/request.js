@@ -16,6 +16,8 @@ function relogin() {
 function modifypw() {
     parent.window.location.replace("userModify.jsp");
 }
+
+
 function reAdminLogin() {
     parent.window.location.replace("AdminReLoginServlet");
 }
@@ -31,3 +33,6 @@ function adminTaskHalt() {
 function adminAcceptFile() {
     window.location.replace("AdminAcceptServlet");
 }
+// function adminManager(target) {
+//     parent.window.location.replace("adminManager.jsp?groupID=" + target);
+// }
