@@ -22,8 +22,16 @@
     <form action="AdminAddGroupServlet" method="post">
       <table>
         <tr>
+        <td>小组ID：</td>
+        <td><input type="text" name="groupID"></td>
+        </tr>
+        <tr>
           <td>小组名称：</td>
           <td><input type="text" name="groupName"></td>
+        </tr>
+        <tr>
+          <td>邀请码：</td>
+          <td><input type="text" name="groupCode"></td>
         </tr>
         <tr>
           <td colspan="2">
@@ -32,7 +40,15 @@
         </tr>
       </table>
     </form>
-    <div id="add-group-message">${message}Hello World</div>
+    <%
+      String message = new String("");
+      if(request.getAttribute("message") == null) {
+          message = "当输入邀请码时，为添加小组，否则为加入小组。";
+      } else {
+          message = (String) request.getAttribute("message");
+      }
+    %>
+    <div id="add-group-message">${message}</div>
   </div>
 </body>
 </html>

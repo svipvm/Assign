@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.demo.vo.Admin" %><%--
   Created by IntelliJ IDEA.
   User: vmice
   Date: 2020/10/20
@@ -14,6 +14,25 @@
   <title>Title</title>
 </head>
 <body>
-
+  <%Admin admin = (Admin) session.getAttribute("admin");%>
+  <div id="admin-add-task">
+    <h2>添加任务 - 组长：<%=admin.getName()%></h2>
+    <hr>
+    <form action="AdminAddTaskServlet" method="post">
+      <table id="admin-add-task-table">
+        <tr>
+          <td>主题：</td>
+          <td><input type="text" name="topic"></td>
+        </tr>
+        <tr>
+          <td>内容：</td>
+          <td><input type="text" name="content"></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><button type="submit">添加</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
 </body>
 </html>

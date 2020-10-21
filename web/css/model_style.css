@@ -364,3 +364,13 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+
+#admin-add-task {
+    border: 1px solid dodgerblue;
+    margin: 10% auto 0 auto;
+    background-color: white;
+    height: 50%;
+    width: 30%;
+    border-radius: 15px;
+    overflow: hidden;
+}

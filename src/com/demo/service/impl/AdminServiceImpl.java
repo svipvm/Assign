@@ -32,6 +32,33 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public String getTaskLastID() {
+        String result = new String("");
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            result = adminDAO.getTaskLastID();
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean addMusterLinkAccount(String ID, String name, String account) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.addMuster(ID, name);
+            flag = adminDAO.adminLinkMuster(account, ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public boolean modifyPassword(String account, String password) {
         boolean flag = false;
         Connection conn = dbc.getConnection();

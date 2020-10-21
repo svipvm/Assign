@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class AdminDAOImpl implements AdminDAO {
     Connection conn = null;
@@ -126,6 +127,20 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public String getTaskLastID() throws Exception {
+        String result = new String("");
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select ID from task order by ID";
+        psmt = conn.prepareStatement(sql);
+        rsts = psmt.executeQuery();
+        if(rsts.last()) {
+            result = rsts.getString(1);
+        }
+        return result;
+    }
+
+    @Override
     public Task findTaskByTaskID(String ID) throws Exception {
         Task task = new Task();
         PreparedStatement psmt = null;
@@ -147,6 +162,54 @@ public class AdminDAOImpl implements AdminDAO {
         psmt.close();
         return task;
     }
+
+    @Override
+    public boolean adminLinkMuster(String account, String ID) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "insert into manager values(?, ?)";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        psmt.setString(2, ID);
+        if(psmt.executeUpdate() == 1) {
+            flag = true;
+        }
+        psmt.close();
+        return flag;
+    }
+
+    @Override
+    public boolean addMuster(String ID, String name) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "insert into muster values(?, ?, ?)";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, ID);
+        psmt.setString(2, name);
+        psmt.setString(3, getCode());
+        if(psmt.executeUpdate() == 1) {
+            flag = true;
+        }
+        psmt.close();
+        return flag;
+    }
+
+    private String getCode() {
+        StringBuilder code = new StringBuilder(new String(""));
+        Random random = new Random(1);
+        for(int i = 0; i < 8; i++) {
+            int index = random.nextInt(3);
+            if(index == 0) {
+                code.append(random.nextInt(10));
+            } else if(index == 1) {
+                code.append('a' + random.nextInt(26));
+            } else {
+                code.append('A' + random.nextInt(26));
+            }
+        }
+        return code.toString();
+    }
+
 
     @Override
     public boolean modifyPassword(String account, String password) throws Exception {

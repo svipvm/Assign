@@ -37,6 +37,10 @@ function adminAcceptFile() {
 function adminAddGroup() {
     parent.window.location.replace("adminAddGroup.jsp");
 }
+function adminAddTask() {
+    parent.window.location.replace("adminAddTask.jsp");
+}
+
 // function adminManager(target) {
 //     parent.window.location.replace("adminManager.jsp?groupID=" + target);
 // }

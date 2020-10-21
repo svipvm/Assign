@@ -21,4 +21,7 @@ public interface AdminService {
     public abstract int countTaskDownloadByID(String ID);
     public abstract boolean addTaskDownloadByID(String ID);
     public abstract boolean modifyPassword(String account, String password);
+    public abstract boolean addMusterLinkAccount(String ID, String name, String account);
+    public abstract String getTaskLastID();
+
 }

@@ -21,4 +21,7 @@ public interface AdminDAO {
     public abstract int countTaskDownloadByID(String ID) throws Exception;
     public abstract boolean addTaskDownloadByID(String ID) throws Exception;
     public abstract  boolean modifyPassword(String account, String password) throws Exception;
+    public abstract boolean addMuster(String ID, String name) throws Exception;
+    public abstract boolean adminLinkMuster(String account, String ID) throws Exception;
+    public abstract String getTaskLastID() throws Exception;
 }
