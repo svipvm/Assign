@@ -20,6 +20,7 @@ import java.util.Date;
 public class AdminAddTaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String topic = request.getParameter("topic");
         String content = request.getParameter("content");
 
