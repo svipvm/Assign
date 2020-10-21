@@ -131,10 +131,10 @@ public class AdminDAOImpl implements AdminDAO {
         String result = new String("");
         PreparedStatement psmt = null;
         ResultSet rsts = null;
-        String sql = "select ID from task order by ID";
+        String sql = "select ID from task order by ID desc";
         psmt = conn.prepareStatement(sql);
         rsts = psmt.executeQuery();
-        if(rsts.last()) {
+        if(rsts.next()) {
             result = rsts.getString(1);
         }
         return result;

@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService {
         } catch (Exception e) {
             Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
         }
+//        System.out.println(result);
         return result;
     }
 

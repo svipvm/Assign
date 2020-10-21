@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet(name="AdminAddTaskServlet", urlPatterns={"/task/AdminAddTaskServlet"})
 public class AdminAddTaskServlet extends HttpServlet {
@@ -26,20 +28,37 @@ public class AdminAddTaskServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         Admin admin = (Admin) session.getAttribute("admin");
-        Muster muster = (Muster) session.getAttribute("muster");
+        String groupID = (String) session.getAttribute("admin-muster");
 
         Task task = new Task();
         AdminService adminService = ServiceFactory.getAdminServiceImple();
         task.setID(getTaskID(adminService.getTaskLastID()));
         task.setAccount(admin.getAccount());
-        task.setMusterID(muster.getID());
+        task.setMusterID(groupID);
         task.setTopic(topic);
         task.setContent(content);
 
     }
 
     private String getTaskID(String date) {
-        return "";
+        String tmp = date.substring(0, 8);
+        System.out.println(tmp);
+        SimpleDateFormat sformat = new SimpleDateFormat("yyyyMMdd");//日期格式
+        String time = sformat.format(new Date());
+        System.out.println(time);
+        String result = new String("");
+        if(tmp.equals(time)) {
+            int count = Integer.parseInt(date.substring(8)) + 1;
+            if(count < 10) {
+                result = time + "0" + count;
+            } else {
+                result = time + count;
+            }
+        } else {
+            result = time + "01";
+        }
+        System.out.println(result);
+        return result;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -3,6 +3,7 @@ package com.demo.admin;
 import com.demo.factory.ServiceFactory;
 import com.demo.service.AdminService;
 import com.demo.service.UserService;
+import com.demo.vo.Muster;
 import com.demo.vo.Task;
 
 import javax.servlet.ServletException;
@@ -28,7 +29,10 @@ public class AdminTaskServlet extends HttpServlet {
         AdminService adminService = ServiceFactory.getAdminServiceImple();
         ArrayList<Task> tasks = adminService.findTaskByMuster(groupID);
 
+//        Muster muster = adminService.findMusterByID(groupID);
+
         HttpSession session = request.getSession();
         session.setAttribute("admin-tasks", tasks);
+        session.setAttribute("admin-muster", groupID);
     }
 }
