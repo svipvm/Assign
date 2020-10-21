@@ -174,6 +174,7 @@ public class AdminDAOImpl implements AdminDAO {
         if(psmt.executeUpdate() == 1) {
             flag = true;
         }
+//        System.out.println("2:" + flag);
         psmt.close();
         return flag;
     }
@@ -190,23 +191,25 @@ public class AdminDAOImpl implements AdminDAO {
         if(psmt.executeUpdate() == 1) {
             flag = true;
         }
+//        System.out.println("1:" + flag);
         psmt.close();
         return flag;
     }
 
     private String getCode() {
         StringBuilder code = new StringBuilder(new String(""));
-        Random random = new Random(1);
+        Random random = new Random();
         for(int i = 0; i < 8; i++) {
             int index = random.nextInt(3);
             if(index == 0) {
                 code.append(random.nextInt(10));
             } else if(index == 1) {
-                code.append('a' + random.nextInt(26));
+                code.append((char) ('a' + random.nextInt(26)));
             } else {
-                code.append('A' + random.nextInt(26));
+                code.append((char) ('A' + random.nextInt(26)));
             }
         }
+        System.out.println(code);
         return code.toString();
     }
 

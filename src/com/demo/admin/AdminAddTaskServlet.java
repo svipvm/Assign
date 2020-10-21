@@ -20,6 +20,7 @@ public class AdminAddTaskServlet extends HttpServlet {
             throws ServletException, IOException {
 //        HttpSession session = request.getSession();
 //        session.getAttribute("")
+
         String topic = request.getParameter("topic");
         String content = request.getParameter("content");
 

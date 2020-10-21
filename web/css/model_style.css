@@ -62,15 +62,19 @@ body {
     width: 98%;
     height: 20%;
 }
+/*.group-table td {*/
+/*    overflow: hidden;*/
+/*}*/
 /*.group-td-left {*/
 /*    border-right: solid 1px dodgerblue;*/
 /*}*/
-/*.group-td-right {*/
-/*    width: 25%;*/
-/*}*/
+.group-td-right {
+    width: 25%;
+}
 .group-td-right button {
     height: 85%;
     width: 90%;
+    font-size: 10px;
     background-color: #158ae7;
     color: #fff;
     border: solid 1px #0254bf;
@@ -335,7 +339,7 @@ body {
     border: 1px solid dodgerblue;
     background-color: white;
     margin: 15% auto 0 auto;
-    height: 25%;
+    height: 42%;
     width: 25%;
     border-radius: 15px;
     overflow: hidden;
@@ -344,11 +348,11 @@ body {
 #add-group table {
     margin: 3% auto 0 auto;
     text-align: center;
-    height: 40%;
+    height: 60%;
     /*line-height: 12%;*/
 }
 #add-group tr {
-    height: 50%;
+    /*height: 50%;*/
 }
 #add-group button {
     width: 80%;
@@ -360,8 +364,8 @@ body {
 #add-group-message {
     /*border: 1px solid dodgerblue;*/
     height: 20px;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    margin: -2% auto 0 auto;
     text-align: center;
 }
 

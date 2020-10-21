@@ -59,6 +59,19 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public boolean adminLinkMuster(String account, String ID) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.adminLinkMuster(account, ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public boolean modifyPassword(String account, String password) {
         boolean flag = false;
         Connection conn = dbc.getConnection();

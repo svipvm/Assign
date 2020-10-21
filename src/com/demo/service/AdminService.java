@@ -23,5 +23,6 @@ public interface AdminService {
     public abstract boolean modifyPassword(String account, String password);
     public abstract boolean addMusterLinkAccount(String ID, String name, String account);
     public abstract String getTaskLastID();
+    public abstract boolean adminLinkMuster(String account, String ID);
 
 }

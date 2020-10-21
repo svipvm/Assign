@@ -16,20 +16,36 @@ import java.io.IOException;
 public class AdminAddGroupServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("groupName");
+        request.setCharacterEncoding("UTF-8");
+
         String ID = request.getParameter("groupID");
+        String name = request.getParameter("groupName");
         String code = request.getParameter("groupCode");
 
-        HttpSession session = request.getSession();
-        Admin admin = (Admin) session.getAttribute("admin");
+        if(ID.length() < 4 || name.length() < 4) {
+            request.setAttribute("message", "ID、名称太短，请重新输入！");
+            request.getRequestDispatcher("adminAddGroup.jsp").forward(request, response);
+            return;
+        }
 
         AdminService adminService = ServiceFactory.getAdminServiceImple();
-        boolean flag = adminService.addMusterLinkAccount(ID, name, admin.getAccount());
+        HttpSession session = request.getSession();
+        Admin admin = (Admin) session.getAttribute("admin");
+        boolean flag = false;
+
+        if("".equals(code)) {
+            flag = adminService.addMusterLinkAccount(ID, name, admin.getAccount());
+        } else {
+            flag = adminService.adminLinkMuster(admin.getAccount(), ID);
+        }
 
         if(flag) {
-            request.setAttribute("massage", "操作完成，请返回首页查看！");
-            request.getRequestDispatcher("adminAddGroup.jsp").forward(request, response);
+            request.setAttribute("message", "操作完成，请返回首页查看！");
+        } else {
+            request.setAttribute("message", "操作失败，请重新操作！");
         }
+
+        request.getRequestDispatcher("adminAddGroup.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
