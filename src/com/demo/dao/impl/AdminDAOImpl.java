@@ -127,6 +127,23 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public boolean addTask(Task task) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        String sql = "insert into task values(?, ?, ?, ?, ?, now(), null)";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, task.getID());
+        psmt.setString(2, task.getAccount());
+        psmt.setString(3, task.getMusterID());
+        psmt.setString(4, task.getTopic());
+        psmt.setString(5, task.getContent());
+        if(psmt.executeUpdate() == 1) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    @Override
     public String getTaskLastID() throws Exception {
         String result = new String("");
         PreparedStatement psmt = null;

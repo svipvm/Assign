@@ -24,4 +24,5 @@ public interface AdminDAO {
     public abstract boolean addMuster(String ID, String name) throws Exception;
     public abstract boolean adminLinkMuster(String account, String ID) throws Exception;
     public abstract String getTaskLastID() throws Exception;
+    public abstract boolean addTask(Task task) throws Exception;
 }

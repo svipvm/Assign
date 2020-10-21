@@ -32,6 +32,19 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public boolean addTask(Task task) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.addTask(task);
+        } catch (Exception e) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public String getTaskLastID() {
         String result = new String("");
         Connection conn = dbc.getConnection();

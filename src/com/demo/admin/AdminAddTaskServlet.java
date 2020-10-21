@@ -20,9 +20,6 @@ import java.util.Date;
 public class AdminAddTaskServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        HttpSession session = request.getSession();
-//        session.getAttribute("")
-
         String topic = request.getParameter("topic");
         String content = request.getParameter("content");
 
@@ -37,7 +34,15 @@ public class AdminAddTaskServlet extends HttpServlet {
         task.setMusterID(groupID);
         task.setTopic(topic);
         task.setContent(content);
+        boolean flag = false;
+        flag = adminService.addTask(task);
 
+        if(flag) {
+            request.setAttribute("message", "已添加任务 " + task.getID());
+        } else {
+            request.setAttribute("message", "该任务添加失败！");
+        }
+        request.getRequestDispatcher("adminAddTask.jsp").forward(request, response);
     }
 
     private String getTaskID(String date) {
