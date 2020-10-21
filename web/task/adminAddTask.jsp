@@ -29,10 +29,17 @@
           <td><input type="text" name="content"></td>
         </tr>
         <tr>
-          <td rowspan="2"><button type="submit">添加</button></td>
+          <td colspan="2"><button type="submit">添加</button></td>
         </tr>
       </table>
     </form>
+    <%
+      String message = (String) request.getAttribute("message");
+      if(message == null) {
+          message = new String("请输入任务的主题与内容！");
+      }
+    %>
+    <div id="admin-add-task-message"><%=message%></div>
   </div>
 </body>
 </html>

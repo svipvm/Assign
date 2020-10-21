@@ -373,8 +373,28 @@ body {
     border: 1px solid dodgerblue;
     margin: 10% auto 0 auto;
     background-color: white;
-    height: 50%;
-    width: 30%;
+    text-align: center;
+    height: 40%;
+    width: 20%;
     border-radius: 15px;
     overflow: hidden;
+}
+#admin-add-task-table {
+    /*border: 1px solid dodgerblue;*/
+    margin: 8% auto 0 auto;
+    width: 80%;
+    height: 50%;
+    text-align: center;
+}
+#admin-add-task-table button {
+    width: 40%;
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+}
+#admin-add-task-message {
+    /*border: 1px solid dodgerblue;*/
+    width: 90%;
+    margin: -2% auto;
 }
