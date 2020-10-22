@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,7 +37,8 @@ public class AdminAddTaskServlet extends HttpServlet {
         task.setTopic(topic);
         task.setContent(content);
         boolean flag = false;
-        flag = adminService.addTask(task);
+        flag = adminService.addTaskLinkUser(task);
+
 
         if(flag) {
             request.setAttribute("message", "已添加任务 " + task.getID());

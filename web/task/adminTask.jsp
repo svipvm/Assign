@@ -18,6 +18,7 @@
 <body>
   <jsp:include page="/task/AdminTaskServlet"/>
   <%ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("admin-tasks");%>
+  <div id="task-add"><button type="button" onclick="adminAddTask()">添加任务</button></div>
   <%for(Task task : tasks) {%>
   <table class="task-table">
     <tr>
@@ -41,7 +42,6 @@
     </tr>
   </table>
   <%}%>
-  <div id="task-add"><button type="button" onclick="adminAddTask()">+</button></div>
-  <br><br>
+  <br>
 </body>
 </html>

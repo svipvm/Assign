@@ -24,5 +24,6 @@ public interface AdminService {
     public abstract boolean addMusterLinkAccount(String ID, String name, String account);
     public abstract String getTaskLastID();
     public abstract boolean adminLinkMuster(String account, String ID);
-    public abstract boolean addTask(Task task);
+    public abstract boolean addTaskLinkUser(Task task);
+    public abstract int findCountByID(String account, String ID);
 }

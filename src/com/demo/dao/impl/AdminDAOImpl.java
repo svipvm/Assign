@@ -158,6 +158,37 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public int findCountByID(String account, String ID) throws Exception {
+        int count = 0;
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "select total from submit where account=? and ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, account);
+        psmt.setString(2, ID);
+        rsts = psmt.executeQuery();
+        if(rsts.next()) {
+            count = rsts.getInt(1);
+        }
+        return count;
+    }
+
+    @Override
+    public boolean taskLikeByGroupID(String taskID, String groupID) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql = "insert into submit(account, ID)" +
+                "select account, ? from belong where ID=?";
+        psmt = conn.prepareStatement(sql);
+        psmt.setString(1, taskID);
+        psmt.setString(2, groupID);
+        // insert into submit(account, ID) select account, '2020101301' from belong where ID='CP201801'
+        int count = psmt.executeUpdate();
+        return true;
+    }
+
+    @Override
     public Task findTaskByTaskID(String ID) throws Exception {
         Task task = new Task();
         PreparedStatement psmt = null;

@@ -32,12 +32,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public boolean addTask(Task task) {
+    public boolean addTaskLinkUser(Task task) {
         boolean flag = false;
         Connection conn = dbc.getConnection();
         AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
         try {
             flag = adminDAO.addTask(task);
+            flag = adminDAO.taskLikeByGroupID(task.getID(), task.getMusterID());
         } catch (Exception e) {
             Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -158,6 +159,19 @@ public class AdminServiceImpl implements AdminService {
             Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return tasks;
+    }
+
+    @Override
+    public int findCountByID(String account, String ID) {
+        int count = 0;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            count = adminDAO.findCountByID(account, ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return count;
     }
 
     @Override

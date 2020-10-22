@@ -28,8 +28,12 @@ function adminModifypw() {
 function adminContentRefresh(target) {
     window.location.replace("adminContent.jsp?taskID=" + target);
 }
-function adminTaskHalt() {
+function adminTaskHalt(target) {
     window.location.replace("AdminTaskHaltServlet");
+    // var taskFrame = parent.document.getElementsByName('frame-task')[0];
+    // taskFrame.src = "adminTask.jsp?groupID=" + target;
+    // var taskPoint = parent.document.getElementsByClassName("task-state-point")[0];
+    // taskPoint.
 }
 function adminAcceptFile() {
     window.location.replace("AdminAcceptServlet");
@@ -40,7 +44,9 @@ function adminAddGroup() {
 function adminAddTask() {
     parent.window.location.replace("adminAddTask.jsp");
 }
-
+function adminDelTask(target) {
+    window.location.replace("AdminDelTaskServlet");
+}
 // function adminManager(target) {
 //     parent.window.location.replace("adminManager.jsp?groupID=" + target);
 // }
