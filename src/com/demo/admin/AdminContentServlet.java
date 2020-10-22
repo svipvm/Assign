@@ -22,16 +22,18 @@ public class AdminContentServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String taskID = request.getParameter("taskID");
+        HttpSession session = request.getSession();
+//        String taskID = request.getParameter("taskID");
+        Task task = (Task) session.getAttribute("admin-task");
 
         AdminService adminService = ServiceFactory.getAdminServiceImple();
-        Task task = adminService.findTaskByTaskID(taskID);
+//        Task task = adminService.findTaskByTaskID(taskID);
+
         int sum = adminService.countMemberByID(task.getMusterID());
         int count = adminService.countAcceptionByID(task.getID());
 //        int down = adminService.countTaskDownloadByID(task.getID());
 
-        HttpSession session = request.getSession();
-        session.setAttribute("admin-task", task);
+//        session.setAttribute("admin-task", task);
         session.setAttribute("admin-sum", sum);
         session.setAttribute("admin-count", count);
 //        session.setAttribute("admin-down", down);

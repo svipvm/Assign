@@ -10,7 +10,7 @@ function reAdminContent(value) {
 function reAdminMember(value) {
     var memberFrame = parent.document.getElementsByName('frame-member')[0];
     // memberFrame.src = "adminContent.jsp?taskID=" + value;
-    memberFrame.src = "adminMember.jsp?groupID=" + value;
+    memberFrame.src = "adminMember.jsp?taskID=" + value;
 }
 
 function refresh() {
@@ -31,7 +31,9 @@ function adminModifypw() {
     parent.window.location.replace("adminModify.jsp");
 }
 function adminContentRefresh(target) {
-    window.location.replace("adminContent.jsp?taskID=" + target);
+    // window.location.replace("adminContent.jsp?taskID=" + target);
+    var memberFrame = parent.document.getElementsByName('frame-member')[0];
+    memberFrame.src = "adminMember.jsp?taskID=" + target;
 }
 function adminTaskHalt(target) {
     window.location.replace("AdminTaskHaltServlet");

@@ -27,7 +27,7 @@ public class AdminAddTaskServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         Admin admin = (Admin) session.getAttribute("admin");
-        String groupID = (String) session.getAttribute("admin-muster");
+        String groupID = (String) session.getAttribute("admin-groupID");
 
         Task task = new Task();
         AdminService adminService = ServiceFactory.getAdminServiceImple();

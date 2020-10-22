@@ -26,6 +26,7 @@ public class UserUploadServlet extends HttpServlet {
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;
     private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40;
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (!ServletFileUpload.isMultipartContent(request)) {
@@ -47,7 +48,7 @@ public class UserUploadServlet extends HttpServlet {
         upload.setFileSizeMax(MAX_FILE_SIZE);
         upload.setSizeMax(MAX_REQUEST_SIZE);
         upload.setHeaderEncoding("UTF-8");
-        String basePath = UPLOAD_DIRECTORY + "\\" + inform.get(1) + "\\" + inform.get(0);
+        String basePath = UPLOAD_DIRECTORY + "\\" + inform.get(1) + "\\" + inform.get(0) + " " + inform.get(2);
         String uploadPath = getServletContext().getRealPath("/WEB-INF/") + basePath;
 //        System.out.println(uploadPath);
         File uploadDir = new File(uploadPath);
@@ -86,6 +87,7 @@ public class UserUploadServlet extends HttpServlet {
         ArrayList<String> inform = (ArrayList<String>) session.getAttribute("user-inform");
         result.add(inform.get(0));
         result.add(task.getID());
+        result.add(inform.get(1));
         return result;
     }
 

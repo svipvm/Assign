@@ -24,7 +24,7 @@ public class AdminTaskHaltServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Task task = (Task) session.getAttribute("admin-task");
 
-        String url = "adminContent.jsp?taskID=" + task.getID();
+        String url = "adminMember.jsp?taskID=" + task.getID();
 
         if(task.getEnd_time() != null) {
             request.setAttribute("message", "任务已结束！");

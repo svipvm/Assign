@@ -99,7 +99,7 @@ public class AdminDAOImpl implements AdminDAO {
         int count = 0;
         PreparedStatement psmt = null;
         ResultSet rsts = null;
-        String sql = "select count(*) from submit where ID=? and total=0";
+        String sql = "select count(*) from submit where ID=? and total!=0";
         psmt = conn.prepareStatement(sql);
         psmt.setString(1, ID);
         rsts = psmt.executeQuery();

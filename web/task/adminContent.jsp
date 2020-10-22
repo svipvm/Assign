@@ -13,12 +13,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
   <script type="text/javascript" src="../js/request.js"></script>
-  <script type="text/javascript">
-      window.onload=function (){
-          var memberFrame = parent.document.getElementsByName('frame-member')[0];
-          memberFrame.src = "adminMember.jsp";
-      }
-  </script>
+
   <title>Title</title>
 </head>
 <body>
@@ -49,7 +44,7 @@
       <td><%=session.getAttribute("admin-down")%></td>
     </tr>
     <tr>
-      <td><button onclick="adminContentRefresh(<%=task.getID()%>)">刷新</button></td>
+      <td><button onclick="adminContentRefresh('<%=task.getID()%>')">刷新</button></td>
       <td><button onclick="adminTaskHalt()">结束</button></td>
     </tr>
     <tr>

@@ -114,6 +114,7 @@ body {
 #task-add button {
     background-color: dodgerblue;
     border: none;
+    color: white;
     /*border-radius: 30px;  */
     /*font-size: 25px;*/
     width: 100%;

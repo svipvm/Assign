@@ -24,14 +24,15 @@ public class AdminMemberServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String taskID = request.getParameter("taskID");
         HttpSession session = request.getSession();
         String groupID = (String) session.getAttribute("admin-groupID");
-        Task task = (Task) session.getAttribute("admin-task");
         ArrayList<User> users = null;
         Map<String, Integer> subCount = new HashMap<>();
 
         AdminService adminService = ServiceFactory.getAdminServiceImple();
         users = adminService.findUsersByMusterID(groupID);
+        Task task = adminService.findTaskByTaskID(taskID);
         if(users.size() != 0) {
             for(User user : users) {
 //                System.out.println(user.getAccount() + " : " + task.getID());
@@ -39,6 +40,7 @@ public class AdminMemberServlet extends HttpServlet {
             }
         }
 
+        session.setAttribute("admin-task", task);
         session.setAttribute("admin-member", users);
         session.setAttribute("admin-status", subCount);
 //        session.setAttribute("user-member-img", imgPath);
