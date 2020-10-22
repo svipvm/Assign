@@ -15,5 +15,6 @@
 </head>
 <body>
   <font color="red"><%=request.getParameter("groupID")%></font>
+
 </body>
 </html>

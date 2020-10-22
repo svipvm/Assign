@@ -2,11 +2,16 @@ function reMenber(value) {
     var memberFrame = parent.document.getElementsByName('frame-member')[0];
     memberFrame.src = "userMember.jsp?groupID=" + value;
 }
-function reAdminMenber(value) {
+function reAdminContent(value) {
+    var memberFrame = parent.document.getElementsByName('frame-content')[0];
+    memberFrame.src = "adminContent.jsp?taskID=" + value;
+    // memberFrame.src = "adminMember.jsp?groupID=" + value;
+}
+function reAdminMember(value) {
     var memberFrame = parent.document.getElementsByName('frame-member')[0];
+    // memberFrame.src = "adminContent.jsp?taskID=" + value;
     memberFrame.src = "adminMember.jsp?groupID=" + value;
 }
-
 
 function refresh() {
     parent.window.location.reload();

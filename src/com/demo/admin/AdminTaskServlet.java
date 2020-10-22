@@ -33,6 +33,7 @@ public class AdminTaskServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         session.setAttribute("admin-tasks", tasks);
+        session.setAttribute("admin-groupID", groupID);
         session.setAttribute("admin-muster", groupID);
     }
 }

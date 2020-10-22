@@ -1,5 +1,6 @@
 <%@ page import="com.demo.vo.Task" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: SvipVM
   Date: 2020/10/13
@@ -12,6 +13,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
   <script type="text/javascript" src="../js/request.js"></script>
+  <script type="text/javascript">
+      window.onload=function (){
+          var memberFrame = parent.document.getElementsByName('frame-member')[0];
+          memberFrame.src = "adminMember.jsp";
+      }
+  </script>
   <title>Title</title>
 </head>
 <body>

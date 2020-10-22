@@ -25,7 +25,7 @@ public class AdminMemberServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String groupID = request.getParameter("groupID");
+        String groupID = (String) session.getAttribute("admin-groupID");
         Task task = (Task) session.getAttribute("admin-task");
         ArrayList<User> users = null;
         Map<String, Integer> subCount = new HashMap<>();
@@ -34,6 +34,7 @@ public class AdminMemberServlet extends HttpServlet {
         users = adminService.findUsersByMusterID(groupID);
         if(users.size() != 0) {
             for(User user : users) {
+//                System.out.println(user.getAccount() + " : " + task.getID());
                 subCount.put(user.getAccount(), adminService.findCountByID(user.getAccount(), task.getID()));
             }
         }
