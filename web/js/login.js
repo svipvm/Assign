@@ -12,3 +12,17 @@ function login_check() {
     }
     return true;
 }
+
+function userCheckCode() {
+    var groupCode = document.getElementById("groupCode");
+    if(groupCode.value === "") {
+        alert("请输入邀请码！");
+        account_elem.focus();
+        return false;
+    } else if(groupCode.length !== 8){
+        alert("请输入8位邀请码！");
+        account_elem.focus();
+        return false;
+    }
+    return true;
+}

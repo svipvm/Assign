@@ -18,7 +18,7 @@
   <jsp:include page="/submit/UserGroupServlet"/>
   <%ArrayList<Muster> groupList = (ArrayList<Muster>) session.getAttribute("user-group");%>
   <%ArrayList<Integer> countList = (ArrayList<Integer>) session.getAttribute("user-member-count");%>
-  <button id="group-button" type="button">加入小组</button>
+  <button id="group-button" type="button" onclick="userAddGroup()">加入小组</button>
   <%for(int i = 0; i < groupList.size(); i++) {%>
     <%Muster group = groupList.get(i);%>
     <%Integer count = countList.get(i);%>
