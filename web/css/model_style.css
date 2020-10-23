@@ -10,9 +10,9 @@ body {
     border: 1px solid dodgerblue;
     border-radius: 10px;
     overflow: hidden;
-    top: 10%;
+    top: 8%;
     width: 30%;
-    height: 45%;
+    height: 50%;
 }
 #inform-table {
     /*border: solid 1px dodgerblue;*/
@@ -32,11 +32,12 @@ body {
 #inform-button {
     border-top: solid 1px dodgerblue;
     padding-top: 4%;
-    margin: 50% auto 0 auto;
+    margin: 45% auto 0 auto;
     /*position: absolute;*/
     /*top: 70%;*/
     /*left: 12%;*/
-    width: 188px;
+    text-align: center;
+    width: 90%;
     height: 16%;
 }
 #inform-button button {
@@ -74,7 +75,7 @@ body {
 .group-td-right button {
     height: 85%;
     width: 90%;
-    font-size: 10px;
+    /*font-size: 10px;*/
     background-color: #158ae7;
     color: #fff;
     border: solid 1px #0254bf;
@@ -122,8 +123,8 @@ body {
 }
 .task-state-point {
     display: inline-block;
-    width: 85%;
-    height: 18%;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
 }
 .task-elem-top {
@@ -131,7 +132,7 @@ body {
 }
 .task-elem-button {
     text-align: center;
-    width: 5%;
+    width: 7%;
     border-left: 1px solid dodgerblue;
 }
 .task-elem-button button {
@@ -188,7 +189,7 @@ body {
     border-radius: 5px;
 }
 .content-inform-user {
-    font-size: 14px;
+    /*font-size: 14px;*/
     border-right: 1px solid dodgerblue;
     float: left;
     height: 80%;
@@ -263,7 +264,7 @@ body {
 }
 .member-table {
     text-align: center;
-    font-size: 13px;
+    /*font-size: 13px;*/
     margin-left: 2%;
     /*line-height: 200%;*/
     width: 95%;

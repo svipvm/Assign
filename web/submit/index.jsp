@@ -17,20 +17,22 @@
   <title>Submit</title>
 </head>
 <body>
-<div class="inform">
-  <iframe name="frame-infrom" src="userInform.jsp"></iframe>
-</div>
-<div class="group">
-  <iframe name="frame-group" src="userGroup.jsp"></iframe>
-</div>
-<div class="task">
-  <iframe name="frame-task" src=""></iframe>
-</div>
-<div class="content">
-  <iframe name="frame-content" src=""></iframe>
-</div>
-<div class="member">
-  <iframe name="frame-member" src=""></iframe>
+<div id="limit-box">
+  <div class="inform">
+    <iframe name="frame-infrom" src="userInform.jsp"></iframe>
+  </div>
+  <div class="group">
+    <iframe name="frame-group" src="userGroup.jsp"></iframe>
+  </div>
+  <div class="task">
+    <iframe name="frame-task" src=""></iframe>
+  </div>
+  <div class="content">
+    <iframe name="frame-content" src=""></iframe>
+  </div>
+  <div class="member">
+    <iframe name="frame-member" src=""></iframe>
+  </div>
 </div>
 </body>
 </html>
