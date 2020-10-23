@@ -14,7 +14,7 @@
   <title>Title</title>
 </head>
 <body>
+  <div id="admin-return"><a href="index.jsp">返回首页</a></div>
   <font color="red"><%=request.getParameter("groupID")%></font>
-
 </body>
 </html>

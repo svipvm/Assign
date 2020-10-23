@@ -12,10 +12,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
   <link type="text/css" rel="stylesheet" href="../css/struct_style.css">
+  <script charset="gb2312" type="text/javascript" src="../js/modify.js"></script>
   <title>Title</title>
 </head>
 <body>
   <%Admin admin = (Admin) session.getAttribute("admin");%>
+  <div id="admin-return"><a href="index.jsp">返回首页</a></div>
   <div class="modify-box">
     <h2>管理员：<%=admin.getName()%></h2>
     <hr color="dodgerblue">

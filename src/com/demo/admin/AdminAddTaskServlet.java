@@ -49,7 +49,12 @@ public class AdminAddTaskServlet extends HttpServlet {
     }
 
     private String getTaskID(String date) {
-        String tmp = date.substring(0, 8);
+        String tmp;
+        if("".equals(date)) {
+            tmp = new String("");
+        } else {
+            tmp = date.substring(0, 8);
+        }
         System.out.println(tmp);
         SimpleDateFormat sformat = new SimpleDateFormat("yyyyMMdd");//日期格式
         String time = sformat.format(new Date());

@@ -15,6 +15,7 @@
 </head>
 <body>
   <%Admin admin = (Admin) session.getAttribute("admin");%>
+  <div id="admin-return"><a href="index.jsp">返回首页</a></div>
   <div id="admin-add-task">
     <h2>添加任务 - 组长：<%=admin.getName()%></h2>
     <hr>

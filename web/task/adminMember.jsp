@@ -25,7 +25,7 @@
   <%ArrayList<User> users = (ArrayList<User>) session.getAttribute("admin-member");%>
   <%Map<String, Integer> subCount = (Map<String, Integer>) session.getAttribute("admin-status");%>
 <%--  <%ArrayList<String> imgPath = (ArrayList<String>) session.getAttribute("admin-member-img");%>--%>
-  <p align="center">小组成员</p>
+  <p align="center">小组提交情况</p>
   <hr color="#158ae7">
   <table class="member-table">
     <%for(int i = 0; i < users.size(); i++) {%>

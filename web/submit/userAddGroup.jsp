@@ -17,6 +17,7 @@
 <body>
   <%User user = (User) session.getAttribute("user");%>
 <%--  <%=user.getName()%>--%>
+  <div id="index-return"><a href="index.jsp">返回首页</a></div>
   <div id="user-add-group">
     <h1>加入小组 - 成员：<%=user.getName()%></h1>
     <hr><br>

@@ -24,7 +24,8 @@ public class AdminTaskHaltServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Task task = (Task) session.getAttribute("admin-task");
 
-        String url = "adminMember.jsp?taskID=" + task.getID();
+//        String url = "adminMember.jsp?taskID=" + task.getID();
+        String url = "adminContent.jsp";
 
         if(task.getEnd_time() != null) {
             request.setAttribute("message", "任务已结束！");
@@ -32,7 +33,8 @@ public class AdminTaskHaltServlet extends HttpServlet {
         } else {
             AdminService adminService = ServiceFactory.getAdminServiceImple();
             boolean flag = adminService.haltTaskByID(task.getID());
-            response.sendRedirect(url);
+            request.setAttribute("message", "任务已结束！");
+            request.getRequestDispatcher(url).forward(request, response);
         }
 
     }

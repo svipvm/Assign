@@ -130,7 +130,7 @@ public class AdminDAOImpl implements AdminDAO {
     public boolean addTask(Task task) throws Exception {
         boolean flag = false;
         PreparedStatement psmt = null;
-        String sql = "insert into task values(?, ?, ?, ?, ?, now(), null)";
+        String sql = "insert into task values(?, ?, ?, ?, ?, now(), null, 0)";
         psmt = conn.prepareStatement(sql);
         psmt.setString(1, task.getID());
         psmt.setString(2, task.getAccount());

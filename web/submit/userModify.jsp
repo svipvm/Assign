@@ -16,6 +16,7 @@
 </head>
 <body>
   <%User user = (User) session.getAttribute("user");%>
+  <div id="index-return"><a href="index.jsp">返回首页</a></div>
   <div class="modify-box">
     <h2>用户：<%=user.getName()%></h2>
     <hr color="dodgerblue">
