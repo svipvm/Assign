@@ -1,14 +1,14 @@
 body {
     /*margin: 0 auto;*/
     /*background-color: yellow;*/
-    background: url(../img/index_bg.jpg) round;
+    background: url(../img/index_bg.jpg) round no-repeat;
 }
 
 .certer-box {
     /*border: 2px solid black;*/
     height: 370px;
     width: 600px;
-    margin: 13% auto;
+    margin: 200px auto 0 auto;
     border-radius: 20px;
     overflow: hidden;
     opacity: 90%;

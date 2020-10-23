@@ -35,7 +35,7 @@ public class LoginUserServlet extends HttpServlet {
             session.setAttribute("user", user);
             response.sendRedirect("submit/index.jsp");
         } else {
-            request.setAttribute("message", "账号、密码错误！");
+            request.setAttribute("message", "Account, password error!");
             request.getRequestDispatcher("/userLogin.jsp").forward(request, response);
         }
     }

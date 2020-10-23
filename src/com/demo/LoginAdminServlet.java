@@ -12,10 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "AdminLoginServlet", urlPatterns = {"/AdminLoginServlet"})
+    @WebServlet(name = "AdminLoginServlet", urlPatterns = {"/AdminLoginServlet"})
 public class LoginAdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        request.setCharacterEncoding("GBK");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
 
@@ -31,7 +32,7 @@ public class LoginAdminServlet extends HttpServlet {
             session.setAttribute("admin", admin);
             response.sendRedirect("task/index.jsp");
         } else {
-            request.setAttribute("error", "账号、密码错误！");
+            request.setAttribute("message", "Account, password error!");
             request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
         }
     }

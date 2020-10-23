@@ -19,12 +19,12 @@
     <h1>任务提交 Topic</h1>
     <hr size="2" color="black">
     <ul>
-      <li><p>Hello World!</p></li>
-      <li><p>Hello World!</p></li>
-      <li><p>Hello World!</p></li>
-      <li><p>Hello World!</p></li>
-      <li><p>Hello World!</p></li>
-      <li><p>Hello World!</p></li>
+      <li><p>一位成员可以加入多个小组</p></li>
+      <li><p>一个小组中会有多个组长和成员</p></li>
+      <li><p>成员只能在组长结束任务前提交任务</p></li>
+      <li><p>一个任务可提交多次，并以最后一次为准</p></li>
+      <li><p>成员不能擅自退出小组，组长能够移除</p></li>
+      <li><p>成员可通过一组长提供的邀请码加入该小组</p></li>
     </ul>
   </div>
   <div class="content right-style">

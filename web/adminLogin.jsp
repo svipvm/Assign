@@ -19,16 +19,16 @@
       <h1>任务布置 Topic</h1>
       <hr size="2" color="black">
       <ul>
-        <li><p>Hello World!</p></li>
-        <li><p>Hello World!</p></li>
-        <li><p>Hello World!</p></li>
-        <li><p>Hello World!</p></li>
-        <li><p>Hello World!</p></li>
-        <li><p>Hello World!</p></li>
+        <li><p>一位小组组长可以加入多个小组</p></li>
+        <li><p>一个小组可以有多个小组组长</p></li>
+        <li><p>一位小组组长可以在小组发布多个任务</p></li>
+        <li><p>小组组长在组里只有踢出成员，发布任务的权限</p></li>
+        <li><p>小组组长可以看到每个任务中每个成员的提交情况</p></li>
+        <li><p>小组组长只可在结束任务后才可收取任务结果</p></li>
       </ul>
     </div>
     <div class="content right-style">
-      <h1>用户登录</h1>
+      <h1>组长登录</h1>
       <hr size="2" color="black">
       <form action="AdminLoginServlet" method="post" onsubmit="return login_check()">
         <ul>
@@ -40,7 +40,7 @@
         </ul>
       </form>
 <%--      <p class="message">Hello World!</p>--%>
-      <p class="message">${error}</p>
+      <p class="message">${message} </p>
     </div>
   </div>
 </body>
