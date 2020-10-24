@@ -41,5 +41,7 @@ public class UserMemberServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("user-member", users);
         session.setAttribute("user-member-img", imgPath);
+
+        userService.close();
     }
 }

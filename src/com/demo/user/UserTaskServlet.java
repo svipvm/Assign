@@ -29,5 +29,7 @@ public class UserTaskServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         session.setAttribute("user-tasks", tasks);
+
+        userService.close();
     }
 }

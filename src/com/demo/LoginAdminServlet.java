@@ -35,6 +35,8 @@ public class LoginAdminServlet extends HttpServlet {
             request.setAttribute("message", "Account, password error!");
             request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
         }
+
+        adminService.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

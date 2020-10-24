@@ -46,7 +46,7 @@ public class DBConnection {
         try {
             conn.close();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, throwables);
         }
     }
 }

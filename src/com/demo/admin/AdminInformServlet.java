@@ -26,7 +26,7 @@ public class AdminInformServlet extends HttpServlet {
             throws ServletException, IOException {
         ArrayList<String> inform = new ArrayList<>();
 
-        AdminService adminService = ServiceFactory.getAdminServiceImple();
+//        AdminService adminService = ServiceFactory.getAdminServiceImple();
 
         HttpSession session = request.getSession();
         Admin admin = (Admin) session.getAttribute("admin");

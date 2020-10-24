@@ -234,6 +234,12 @@ public class AdminServiceImpl implements AdminService {
         return admin;
     }
 
+
+    @Override
+    public void close() {
+        dbc.close();
+    }
+
     @Override
     public String loginAdmin(Admin admin) {
         String messge = "error";

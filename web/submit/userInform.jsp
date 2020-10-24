@@ -28,7 +28,7 @@
     &nbsp;&nbsp;
     <button type="button" onclick="modifypw()">更改密码</button>
     &nbsp;&nbsp;
-    <button type="button" onclick="reAdminLogin()">注销</button>
+    <button type="button" onclick="reUserlogin()">注销</button>
   </div>
 </body>
 </html>

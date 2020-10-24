@@ -42,8 +42,8 @@ public class UserModifyServlet extends HttpServlet {
                 session.invalidate();
                 response.sendRedirect("../userLogin.jsp");
             }
+            userService.close();
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

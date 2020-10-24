@@ -35,5 +35,7 @@ public class AdminTaskServlet extends HttpServlet {
         session.setAttribute("admin-tasks", tasks);
         session.setAttribute("admin-groupID", groupID);
 //        session.setAttribute("admin-muster", groupID);
+
+        adminService.close();
     }
 }

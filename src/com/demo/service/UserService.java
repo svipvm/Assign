@@ -6,6 +6,7 @@ import com.demo.vo.User;
 import java.util.ArrayList;
 
 public interface UserService {
+    public abstract void close();
     public abstract String loginUser(User user);
     public abstract User findUserByAccount(String Name);
     public abstract ArrayList<Muster> findGroupListByAccount(String account);

@@ -35,6 +35,8 @@ public class CheckUserFilter implements Filter {
 //            request.getRequestDispatcher("../adminLogin.jsp").forward(request, response);
             ((HttpServletResponse) resp).sendRedirect("../userLogin.jsp");
         }
+
+        userService.close();
     }
 
     public void init(FilterConfig config) throws ServletException {

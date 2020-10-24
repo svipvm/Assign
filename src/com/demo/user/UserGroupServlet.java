@@ -38,5 +38,7 @@ public class UserGroupServlet extends HttpServlet {
 
         session.setAttribute("user-group", groupList);
         session.setAttribute("user-member-count", countList);
+
+        userService.close();
     }
 }

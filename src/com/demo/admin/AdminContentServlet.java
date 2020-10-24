@@ -38,5 +38,6 @@ public class AdminContentServlet extends HttpServlet {
         session.setAttribute("admin-count", count);
 //        session.setAttribute("admin-down", down);
 
+        adminService.close();
     }
 }

@@ -46,6 +46,7 @@ public class AdminAddTaskServlet extends HttpServlet {
             request.setAttribute("message", "该任务添加失败！");
         }
         request.getRequestDispatcher("adminAddTask.jsp").forward(request, response);
+        adminService.close();
     }
 
     private String getTaskID(String date) {

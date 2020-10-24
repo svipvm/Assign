@@ -35,6 +35,8 @@ public class CheckAdminFilter implements Filter {
 //            request.getRequestDispatcher("../adminLogin.jsp").forward(request, response);
             ((HttpServletResponse) resp).sendRedirect("../adminLogin.jsp");
         }
+
+        adminService.close();
     }
 
     public void init(FilterConfig config) throws ServletException {

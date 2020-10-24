@@ -48,7 +48,7 @@ public class UserUploadServlet extends HttpServlet {
         upload.setFileSizeMax(MAX_FILE_SIZE);
         upload.setSizeMax(MAX_REQUEST_SIZE);
         upload.setHeaderEncoding("UTF-8");
-        String basePath = UPLOAD_DIRECTORY + "\\" + inform.get(1) + "\\" + inform.get(0) + " " + inform.get(2);
+        String basePath = UPLOAD_DIRECTORY + "/" + inform.get(1) + "/" + inform.get(0) + " " + inform.get(2);
         String uploadPath = getServletContext().getRealPath("/WEB-INF/") + basePath;
 //        System.out.println(uploadPath);
         File uploadDir = new File(uploadPath);
@@ -77,6 +77,8 @@ public class UserUploadServlet extends HttpServlet {
             request.setAttribute("message", "上传文件失败！");
         }
         request.getRequestDispatcher("/submit/userContent.jsp").forward(request, response);
+
+        userService.close();
     }
 
 

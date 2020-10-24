@@ -46,6 +46,8 @@ public class AdminAddGroupServlet extends HttpServlet {
         }
 
         request.getRequestDispatcher("adminAddGroup.jsp").forward(request, response);
+
+        adminService.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

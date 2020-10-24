@@ -39,5 +39,7 @@ public class AdminGroupServlet extends HttpServlet {
 
         session.setAttribute("admin-group", groupList);
         session.setAttribute("admin-member-count", countList);
+
+        adminService.close();
     }
 }

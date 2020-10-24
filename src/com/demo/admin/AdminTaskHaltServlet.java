@@ -35,6 +35,8 @@ public class AdminTaskHaltServlet extends HttpServlet {
             boolean flag = adminService.haltTaskByID(task.getID());
             request.setAttribute("message", "任务已结束！");
             request.getRequestDispatcher(url).forward(request, response);
+
+            adminService.close();
         }
 
     }

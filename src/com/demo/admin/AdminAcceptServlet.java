@@ -40,7 +40,7 @@ public class AdminAcceptServlet extends HttpServlet {
 
         response.setContentType("APPLICATION/OCTET-STREAM");
         String fileAttribute = "attachment; filename=" + task.getID() + ".zip";
-        System.out.println(fileAttribute);
+//        System.out.println(fileAttribute);
         response.setHeader("Content-Disposition", fileAttribute);
 
         ZipOutputStream zos = new ZipOutputStream(response.getOutputStream());
@@ -54,6 +54,8 @@ public class AdminAcceptServlet extends HttpServlet {
 
         AdminService adminService = ServiceFactory.getAdminServiceImple();
         boolean flag = adminService.addTaskDownloadByID(task.getID());
+
+        adminService.close();
     }
 
     private void zipFile(File file, String basePath, ZipOutputStream zos) throws IOException {

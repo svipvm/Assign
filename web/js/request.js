@@ -21,7 +21,7 @@ function reAdminMember(value) {
 function refresh() {
     parent.window.location.reload();
 }
-function relogin() {
+function reUserlogin() {
     parent.window.location.replace("UserReLoginServlet");
 }
 function modifypw() {

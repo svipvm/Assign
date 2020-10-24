@@ -49,6 +49,8 @@ public class AdminModifyServlet extends HttpServlet {
 //                session.invalidate();
 //                response.sendRedirect("../userLogin.jsp");
 //            }
+
+            adminService.close();
         }
     }
 

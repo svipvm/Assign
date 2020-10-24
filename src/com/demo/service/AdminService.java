@@ -8,6 +8,7 @@ import com.demo.vo.User;
 import java.util.ArrayList;
 
 public interface AdminService {
+    public abstract void close();
     public abstract String loginAdmin(Admin admin);
     public abstract Admin findAdminByAccount(String account);
     public abstract ArrayList<Muster> findGroupListByAccount(String account);

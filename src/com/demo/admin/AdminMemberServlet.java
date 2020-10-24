@@ -44,5 +44,7 @@ public class AdminMemberServlet extends HttpServlet {
         session.setAttribute("admin-member", users);
         session.setAttribute("admin-status", subCount);
 //        session.setAttribute("user-member-img", imgPath);
+
+        adminService.close();
     }
 }

@@ -46,6 +46,8 @@ public class UserInformServlet extends HttpServlet {
         inform.add(String.valueOf(group_count));
 
         session.setAttribute("user-inform", inform);
+
+        userService.close();
     }
 
 }

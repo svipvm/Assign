@@ -212,6 +212,8 @@ public class UserDAOImpl implements UserDAO {
         if(rsts.next()) {
             name = rsts.getString("name");
         }
+        rsts.close();
+        psmt.close();
         return name;
     }
 
@@ -227,6 +229,8 @@ public class UserDAOImpl implements UserDAO {
         if(rsts.next()) {
             count = rsts.getInt(1);
         }
+        rsts.close();
+        psmt.close();
         return count;
     }
 }

@@ -17,6 +17,11 @@ public class UserServiceImpl implements UserService {
     private final DBConnection dbc = new DBConnection();
 
     @Override
+    public void close() {
+        dbc.close();
+    }
+
+    @Override
     public String loginUser(User user) {
         String messge = "error";
         if(user == null) return messge;

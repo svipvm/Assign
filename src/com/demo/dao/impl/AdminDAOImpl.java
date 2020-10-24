@@ -32,6 +32,8 @@ public class AdminDAOImpl implements AdminDAO {
         if(rsts.next()) {
             count = rsts.getInt("down");
         }
+        rsts.close();
+        psmt.close();
         return count;
     }
 
@@ -47,6 +49,8 @@ public class AdminDAOImpl implements AdminDAO {
         if(rsts.next()) {
             count = rsts.getInt(1);
         }
+        rsts.close();
+        psmt.close();
         return count;
     }
 
@@ -78,6 +82,7 @@ public class AdminDAOImpl implements AdminDAO {
         psmt = conn.prepareStatement(sql);
         psmt.setString(1, ID);
         psmt.executeUpdate();
+        psmt.close();
         return true;
     }
 
@@ -91,6 +96,7 @@ public class AdminDAOImpl implements AdminDAO {
         if(psmt.executeUpdate() == 1) {
             flag = true;
         }
+        psmt.close();
         return flag;
     }
 
@@ -123,6 +129,8 @@ public class AdminDAOImpl implements AdminDAO {
         if(rsts.next()) {
             name = rsts.getString("name");
         }
+        rsts.close();
+        psmt.close();
         return name;
     }
 
@@ -140,6 +148,7 @@ public class AdminDAOImpl implements AdminDAO {
         if(psmt.executeUpdate() == 1) {
             flag = true;
         }
+        psmt.close();
         return flag;
     }
 
@@ -154,6 +163,8 @@ public class AdminDAOImpl implements AdminDAO {
         if(rsts.next()) {
             result = rsts.getString(1);
         }
+        rsts.close();
+        psmt.close();
         return result;
     }
 
@@ -170,6 +181,8 @@ public class AdminDAOImpl implements AdminDAO {
         if(rsts.next()) {
             count = rsts.getInt(1);
         }
+        rsts.close();
+        psmt.close();
         return count;
     }
 
@@ -177,7 +190,7 @@ public class AdminDAOImpl implements AdminDAO {
     public boolean taskLikeByGroupID(String taskID, String groupID) throws Exception {
         boolean flag = false;
         PreparedStatement psmt = null;
-        ResultSet rsts = null;
+//        ResultSet rsts = null;
         String sql = "insert into submit(account, ID)" +
                 "select account, ? from belong where ID=?";
         psmt = conn.prepareStatement(sql);
@@ -185,6 +198,7 @@ public class AdminDAOImpl implements AdminDAO {
         psmt.setString(2, groupID);
         // insert into submit(account, ID) select account, '2020101301' from belong where ID='CP201801'
         int count = psmt.executeUpdate();
+        psmt.close();
         return true;
     }
 
@@ -257,7 +271,7 @@ public class AdminDAOImpl implements AdminDAO {
                 code.append((char) ('A' + random.nextInt(26)));
             }
         }
-        System.out.println(code);
+//        System.out.println(code);
         return code.toString();
     }
 
@@ -273,6 +287,7 @@ public class AdminDAOImpl implements AdminDAO {
         if(psmt.executeUpdate() == 1) {
             flag = true;
         }
+        psmt.close();
         return flag;
     }
 

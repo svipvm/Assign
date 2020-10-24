@@ -38,6 +38,8 @@ public class LoginUserServlet extends HttpServlet {
             request.setAttribute("message", "Account, password error!");
             request.getRequestDispatcher("/userLogin.jsp").forward(request, response);
         }
+
+        userService.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
