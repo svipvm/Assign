@@ -19,10 +19,10 @@ function userCheckCode() {
         alert("请输入邀请码！");
         account_elem.focus();
         return false;
-    } else if(groupCode.length !== 8){
-        alert("请输入8位邀请码！");
+    } else {
+        alert("您为Svip用户，无法加入其他小组！");
         account_elem.focus();
         return false;
     }
-    return true;
+    // return false;
 }

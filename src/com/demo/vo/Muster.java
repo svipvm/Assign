@@ -3,6 +3,7 @@ package com.demo.vo;
 public class Muster {
     private String ID;
     private String name;
+    private String invite;
 
     public String getInvite() {
         return invite;
@@ -12,7 +13,6 @@ public class Muster {
         this.invite = invite;
     }
 
-    private String invite;
 
     public String getID() {
         return ID;
