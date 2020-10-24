@@ -11,7 +11,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
   <link type="text/css" rel="stylesheet" href="../css/struct_style.css">
-  <script type="text/javascript" src="../js/login.js"></script>
+  <script charset="gb2312" type="text/javascript" src="../js/login.js"></script>
   <title>Title</title>
 </head>
 <body>

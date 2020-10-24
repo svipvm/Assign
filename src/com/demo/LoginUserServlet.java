@@ -20,6 +20,7 @@ import java.io.IOException;
 public class LoginUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("gb2312");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
 
@@ -35,7 +36,7 @@ public class LoginUserServlet extends HttpServlet {
             session.setAttribute("user", user);
             response.sendRedirect("submit/index.jsp");
         } else {
-            request.setAttribute("message", "Account, password error!");
+            request.setAttribute("message", "’À∫≈°¢√‹¬Î¥ÌŒÛ£°");
             request.getRequestDispatcher("/userLogin.jsp").forward(request, response);
         }
 

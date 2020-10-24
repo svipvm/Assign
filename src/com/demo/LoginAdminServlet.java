@@ -16,7 +16,7 @@ import java.io.IOException;
 public class LoginAdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        request.setCharacterEncoding("GBK");
+        request.setCharacterEncoding("gb2312");
         String account = request.getParameter("account");
         String password = request.getParameter("password");
 
@@ -32,7 +32,7 @@ public class LoginAdminServlet extends HttpServlet {
             session.setAttribute("admin", admin);
             response.sendRedirect("task/index.jsp");
         } else {
-            request.setAttribute("message", "Account, password error!");
+            request.setAttribute("message", "’À∫≈°¢√‹¬Î¥ÌŒÛ£°");
             request.getRequestDispatcher("adminLogin.jsp").forward(request, response);
         }
 
