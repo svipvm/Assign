@@ -422,3 +422,44 @@ body {
     width: 80px;
     text-align: center;
 }
+#admin-manager {
+    border: 1px solid dodgerblue;
+    margin: 150px auto 0 auto;
+    background-color: white;
+    text-align: center;
+    width: 450px;
+    height: 550px;
+}
+#admin-manager-roll {
+    /*border: 1px solid dodgerblue;*/
+    margin: 0 auto;
+    height: 450px;
+    width: 430px;
+    overflow-y: scroll;
+}
+#admin-manager-roll table {
+    /*border-bottom: 1px solid dodgerblue;*/
+    text-align: center;
+    width: 100%;
+}
+#admin-manager-roll tr {
+    /*border-bottom: 1px solid dodgerblue;*/
+    /*text-align: center;*/
+    /*width: 100%;*/
+}
+#admin-manager-roll th {
+    border-bottom: 1px solid dodgerblue;
+    /*width: 30%;*/
+}
+#admin-manager-roll td {
+    border-bottom: 1px solid dodgerblue;
+    /*width: 30%;*/
+}
+#admin-manager-roll button {
+    /*border-bottom: 1px solid dodgerblue;*/
+    background-color: #158ae7;
+    color: #fff;
+    border: solid 1px #0254bf;
+    border-radius: 5px;
+    width: 100px;
+}

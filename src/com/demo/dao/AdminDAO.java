@@ -27,4 +27,5 @@ public interface AdminDAO {
     public abstract boolean addTask(Task task) throws Exception;
     public abstract boolean taskLikeByGroupID(String taskID, String groupID) throws Exception;
     public abstract int findCountByID(String account, String ID) throws Exception;
+    public abstract boolean delTaskByID(String ID) throws Exception;
 }

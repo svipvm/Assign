@@ -337,6 +337,24 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    public boolean delTaskByID(String ID) throws Exception {
+        boolean flag = false;
+        PreparedStatement psmt = null;
+        ResultSet rsts = null;
+        String sql1 = "delete from submit where ID=?";
+        String sql2 = "delete from task where ID=?";
+        psmt = conn.prepareStatement(sql1);
+        psmt.setString(1, ID);
+        if(psmt.executeUpdate() != 0) {
+            flag = true;
+        }
+        if(!flag) return false;
+        psmt = conn.prepareStatement(sql2);
+        psmt.setString(1, ID);
+        return psmt.executeUpdate() != 0;
+    }
+
+    @Override
     public Admin findByAccount(String account) throws Exception {
         Admin admin = null;
         PreparedStatement psmt = null;

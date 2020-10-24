@@ -56,10 +56,10 @@ public class AdminAddTaskServlet extends HttpServlet {
         } else {
             tmp = date.substring(0, 8);
         }
-        System.out.println(tmp);
+//        System.out.println(tmp);
         SimpleDateFormat sformat = new SimpleDateFormat("yyyyMMdd");//日期格式
         String time = sformat.format(new Date());
-        System.out.println(time);
+//        System.out.println(time);
         String result = new String("");
         if(tmp.equals(time)) {
             int count = Integer.parseInt(date.substring(8)) + 1;
@@ -71,7 +71,7 @@ public class AdminAddTaskServlet extends HttpServlet {
         } else {
             result = time + "01";
         }
-        System.out.println(result);
+//        System.out.println(result);
         return result;
     }
 

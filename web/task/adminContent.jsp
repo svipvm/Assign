@@ -48,8 +48,8 @@
       <td><button onclick="adminTaskHalt()">结束</button></td>
     </tr>
     <tr>
-<%--      <td><button onclick="adminDelTask()">删除</button></td>--%>
-      <td colspan="2"><button onclick="adminAcceptFile()">收集任务</button></td>
+      <td><button onclick="adminDelTask()">删除</button></td>
+      <td><button onclick="adminAcceptFile()">收集</button></td>
     </tr>
   </table>
 <%--  <form action="UserUploadServlet" enctype="multipart/form-data" method="post">--%>

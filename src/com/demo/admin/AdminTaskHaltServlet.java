@@ -33,9 +33,10 @@ public class AdminTaskHaltServlet extends HttpServlet {
         } else {
             AdminService adminService = ServiceFactory.getAdminServiceImple();
             boolean flag = adminService.haltTaskByID(task.getID());
+            task = adminService.findTaskByTaskID(task.getID());
+            session.setAttribute("admin-task", task);
             request.setAttribute("message", "任务已结束！");
             request.getRequestDispatcher(url).forward(request, response);
-
             adminService.close();
         }
 

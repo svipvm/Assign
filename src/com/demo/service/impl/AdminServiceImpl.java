@@ -236,6 +236,19 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
+    public boolean delTaskByID(String ID) {
+        boolean flag = false;
+        Connection conn = dbc.getConnection();
+        AdminDAO adminDAO = DAOFactory.getAdminDAOImpl(conn);
+        try {
+            flag = adminDAO.delTaskByID(ID);
+        } catch (Exception e) {
+            Logger.getLogger(AdminServiceImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return flag;
+    }
+
+    @Override
     public void close() {
         dbc.close();
     }
