@@ -27,7 +27,7 @@ public class AdminDelTaskServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         Task task = (Task) session.getAttribute("admin-task");
-        String url = "adminContent.jsp";
+        String url = "adminContent.jsp?taskID=" + task.getID();
 
         if(task.getEnd_time() == null) {
             request.setAttribute("message", "请先结束任务！");
