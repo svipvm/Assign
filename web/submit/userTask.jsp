@@ -16,28 +16,30 @@
 <body>
   <jsp:include page="/submit/UserTaskServlet"/>
   <%ArrayList<Task> tasks = (ArrayList<Task>) session.getAttribute("user-tasks");%>
-  <%for(Task task : tasks) {%>
-  <table class="task-table">
-    <tr>
-      <td class="task-elem-img" rowspan="3">
-        <%String colorState = (task.getEnd_time() != null ? "#E6A23C" : "#67C23A");%>
-        <div class="task-state-point" style="background-color:<%=colorState%>"></div>
-      </td>
-      <td class="task-elem-top" colspan="2"><%= task.getTopic()%></td>
-<%--      <td class="task-elem-button" rowspan="3"><button type="button">删除</button></td>--%>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>开始时间：<%=task.getStart_time()%></td>
-      <td rowspan="2" class="task-elem-button">
-        <a href="userContent.jsp?taskID=<%=task.getID()%>" target="frame-content">
-          <button type="button">选择</button>
-        </a>
-      </td>
-    </tr>
-    <tr class="task-elem-inform">
-      <td>结束时间：<%=task.getEnd_time()%></td>
-    </tr>
-  </table>
+  <%int len = tasks.size();%>
+  <%for(int i = len - 1; 0 <= i; i--) {%>
+    <%Task task = tasks.get(i);%>
+    <table class="task-table">
+      <tr>
+        <td class="task-elem-img" rowspan="3">
+          <%String colorState = (task.getEnd_time() != null ? "#E6A23C" : "#67C23A");%>
+          <div class="task-state-point" style="background-color:<%=colorState%>"></div>
+        </td>
+        <td class="task-elem-top" colspan="2"><%= task.getTopic()%></td>
+  <%--      <td class="task-elem-button" rowspan="3"><button type="button">删除</button></td>--%>
+      </tr>
+      <tr class="task-elem-inform">
+        <td>开始时间：<%=task.getStart_time()%></td>
+        <td rowspan="2" class="task-elem-button">
+          <a href="userContent.jsp?taskID=<%=task.getID()%>" target="frame-content">
+            <button type="button">选择</button>
+          </a>
+        </td>
+      </tr>
+      <tr class="task-elem-inform">
+        <td>结束时间：<%=task.getEnd_time()%></td>
+      </tr>
+    </table>
   <%}%>
 </body>
 </html>

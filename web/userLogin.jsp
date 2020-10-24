@@ -25,6 +25,7 @@
       <li><p>一个任务可提交多次，并以最后一次为准</p></li>
       <li><p>成员不能擅自退出小组，组长能够移除</p></li>
       <li><p>成员可通过一组长提供的邀请码加入该小组</p></li>
+      <li><p><font color="red">上传文件请等待提示上传完成后离开</font></p></li>
     </ul>
   </div>
   <div class="content right-style">
