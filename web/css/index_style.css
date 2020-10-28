@@ -23,7 +23,11 @@ body {
 }
 
 .img-style {
+    border: 1px solid dodgerblue;
     border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    background: round;
     overflow: hidden;
 }
 
