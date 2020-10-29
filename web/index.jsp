@@ -10,7 +10,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="css/index_style.css">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link type="image/x-icon" rel="shortcut icon" href="favicon.ico">
     <title>任务系统</title>
   </head>
   <body>
@@ -19,13 +19,13 @@
         <a href="adminLogin.jsp">
           <img class="img-style" src="img/assign.png" alt="assign login">
         </a>
-        <div class="text-content">Assign</div>
+        <div class="text-content">组长 - 发布任务</div>
       </div>
       <div class="select-box right-box">
         <a href="userLogin.jsp">
-          <img class="img-style" src="img/submit.png" alt="submit login">
+          <img class="img-style" src="img/submit.jpg" alt="submit login">
         </a>
-        <div class="text-content">Submit</div>
+        <div class="text-content">成员 - 提交任务</div>
       </div>
     </div>
   </body>
