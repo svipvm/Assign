@@ -30,17 +30,18 @@ public class UserUploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         if (!ServletFileUpload.isMultipartContent(request)) {
-            request.setAttribute("message", "请上传文件！");
+            request.setAttribute("usermessage", "请上传文件！");
             request.getRequestDispatcher("/submit/userContent.jsp").forward(request, response);
             return;
         }
         ArrayList<String> inform = getSolveInform(request);
         UserService userService = ServiceFactory.getUserServiceImpl();
         if(!userService.checkTaskByID(inform.get(1))) {
-            request.setAttribute("message", "任务已结束！");
+            request.setAttribute("usermessage", "任务已结束！");
             request.getRequestDispatcher("/submit/userContent.jsp").forward(request, response);
             return;
         }
+
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(MEMORY_THRESHOLD);
         factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
@@ -67,14 +68,18 @@ public class UserUploadServlet extends HttpServlet {
                     File storeFile = new File(filePath);
                     fileNameList.add(fileName);
 //                    System.out.println(filePath);
+                    if (storeFile.exists()) {
+                        storeFile.delete();
+                    }
                     item.write(storeFile);
                 }
             }
             request.setAttribute("user-fileName", fileNameList);
-            request.setAttribute("message", count + " 个文件上传！");
+            request.setAttribute("usermessage", count + " 个文件已上传！");
             userService.addTaskTotal(inform.get(0), inform.get(1));
         } catch (Exception e) {
-            request.setAttribute("message", "上传文件失败！");
+            request.setAttribute("usermessage", "上传文件失败！");
+            System.out.println(e.getMessage());
         }
         request.getRequestDispatcher("/submit/userContent.jsp").forward(request, response);
 

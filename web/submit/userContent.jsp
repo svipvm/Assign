@@ -12,7 +12,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/model_style.css">
+<%--  <script type="text/javascript" src="../js/request.js"></script>--%>
   <title>Title</title>
+  <script>
+      function uploadWarting() {
+          // var inform = document.getElementById("content-message");
+          // inform.value = "文件正在上传……";
+          var inform = document.getElementById('content-message');
+          inform.innerHTML = '文件正在上传……';
+          alert("正在拼命上传中！");
+      }
+  </script>
 </head>
 <body>
   <jsp:include page="/submit/UserContentServlet"/>
@@ -29,7 +39,7 @@
   </div>
   <form action="UserUploadServlet" enctype="multipart/form-data" method="post">
     <input type="file" id="uploadFile" name="uploadFile" multiple="multiple"/>
-    <button id="content-button" type="submit">上传</button>
+    <button id="content-button" type="submit" onclick="uploadWarting()">上传</button>
   </form>
   <div id="content-files">
     <%if(fileName != null) {%>
@@ -42,6 +52,6 @@
       <p>任务已结束，无法提交！</p>
     <%}%>
   </div>
-  <div id="content-message">${message}</div>
+  <div id="content-message">${usermessage}</div>
 </body>
 </html>
